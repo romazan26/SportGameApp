@@ -14,13 +14,7 @@ struct WelcomeView: View {
                 if !isLoading {
                     LoadingView()
                 } else {
-                    ZStack(alignment: Alignment(horizontal: .center, vertical: .top)){
-                        Image(.background)
-                            .resizable()
-                            .scaledToFill()
-                            .ignoresSafeArea()
-                        Color(.backGround)
-                            .opacity(0.85)
+                    VStack{
                         VStack{
                             Text("WELCOME")
                                 .foregroundStyle(.white)
@@ -29,11 +23,23 @@ struct WelcomeView: View {
                             Text("Test your sports knowledge now")
                                 .foregroundStyle(.white)
                                 .font(.system(size: 15))
-                        }.padding(.top, 130)
+                        }.padding(.top, 100)
+                        Spacer()
                         StartButton(action: {
                             //action
                         }, text: "PLAY NOW", image: "")
-                        .padding(.top, 690)
+                        .padding(.bottom)
+                        
+                    }.background {
+                        ZStack{
+                            Image(.background)
+                                .resizable()
+                                .scaledToFill()
+                                .ignoresSafeArea()
+                            Color(.backGround)
+                                .ignoresSafeArea()
+                                .opacity(0.85)
+                        }
                     }
                 }
             
