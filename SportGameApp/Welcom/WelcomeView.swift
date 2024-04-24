@@ -11,7 +11,7 @@ struct WelcomeView: View {
     @State var isLoading = true
     var body: some View {
         VStack {
-                if !isLoading {
+                if isLoading {
                     LoadingView()
                 } else {
                     VStack{
