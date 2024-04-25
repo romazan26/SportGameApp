@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct WelcomeView: View {
+    @State private var isPresented = false
     @State var isLoading = true
     var body: some View {
         VStack {
@@ -26,7 +27,7 @@ struct WelcomeView: View {
                         }.padding(.top, 100)
                         Spacer()
                         StartButton(action: {
-                            //action
+                            isPresented = true
                         }, text: "PLAY NOW", image: "")
                         .padding(.bottom)
                         
@@ -43,7 +44,11 @@ struct WelcomeView: View {
                     }
                 }
             
-        }.onAppear(perform: {
+        }
+        .fullScreenCover(isPresented: $isPresented, content: {
+            MenuView()
+        })
+        .onAppear(perform: {
             startLoading()
     })
        

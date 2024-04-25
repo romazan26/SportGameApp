@@ -9,11 +9,12 @@ import SwiftUI
 
 struct ButtonMenu: View {
     
-    var text = "GAMES"
-    var icon = "gamecontroller.fill"
+    var text = ""
+    var icon = ""
+    var action: () -> Void = {}
     
     var body: some View {
-        Button(action: {}, label: {
+        Button(action: action, label: {
             ZStack {
                 RoundedRectangle(cornerRadius: 25.0)
                     .foregroundStyle(.backGroundButtton)
