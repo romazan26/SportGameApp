@@ -29,10 +29,23 @@ struct MenuView: View {
                         ButtonMenu(text: "GAMES", icon: "gamecontroller.fill")
                     }
                         .padding(.top, 40)
-                    
-                    StartButton(action: {
-                        //action
-                    }, text: "BONUS GAME", image: "star.fill")
+                    NavigationLink {
+                        BonusGameView()
+                    } label: {
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 25.0)
+                                .foregroundStyle(.colorButton)
+                                .frame(width: 331, height: 80)
+                            HStack {
+                                Image(systemName: "star.fill")
+                                    .foregroundStyle(.white)
+                                Text("BONUS GAME")
+                                    .foregroundStyle(.white)
+                                    .font(.title2)
+                                    .bold()
+                            }
+                        }
+                    }
                     
                     ButtonMenu(text: "SHOP", icon: "cart.fill")
                     

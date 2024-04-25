@@ -18,6 +18,7 @@
 		30CE2AB32BD82E940011811A /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CE2AB22BD82E940011811A /* LoadingView.swift */; };
 		30CE2AB62BD82F610011811A /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CE2AB52BD82F610011811A /* ProgressBarView.swift */; };
 		30CE2AB82BD83A820011811A /* StartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CE2AB72BD83A820011811A /* StartButton.swift */; };
+		30F714402BDADCF1000E4449 /* ToolBarMoneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F7143F2BDADCF1000E4449 /* ToolBarMoneyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		30CE2AB22BD82E940011811A /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		30CE2AB52BD82F610011811A /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		30CE2AB72BD83A820011811A /* StartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButton.swift; sourceTree = "<group>"; };
+		30F7143F2BDADCF1000E4449 /* ToolBarMoneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarMoneyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				30CE2AB52BD82F610011811A /* ProgressBarView.swift */,
 				30CE2AB72BD83A820011811A /* StartButton.swift */,
 				302D2E692BD98C1C0046B86F /* ButtonMenu.swift */,
+				30F7143F2BDADCF1000E4449 /* ToolBarMoneyView.swift */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				308C42212BDA2D7800518B3B /* GamesView.swift in Sources */,
 				308C42242BDA36E700518B3B /* BonusGameView.swift in Sources */,
 				302D2E682BD98AD60046B86F /* MenuView.swift in Sources */,
+				30F714402BDADCF1000E4449 /* ToolBarMoneyView.swift in Sources */,
 				30CE2AB62BD82F610011811A /* ProgressBarView.swift in Sources */,
 				30CE2AB82BD83A820011811A /* StartButton.swift in Sources */,
 				30CE2AA42BD82E310011811A /* SportGameAppApp.swift in Sources */,

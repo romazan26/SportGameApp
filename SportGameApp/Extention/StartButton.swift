@@ -9,12 +9,14 @@ import SwiftUI
 
 struct StartButton: View {
     var action: () -> Void = {}
-    @State var text = "Play"
-    @State var image = "star"
+    @State var text = ""
+    @State var image = ""
+    @State var cornerRadius: CGFloat = 25.0
+    
     var body: some View {
         Button(action: action, label: {
             ZStack{
-                RoundedRectangle(cornerRadius: 25.0)
+                RoundedRectangle(cornerRadius: cornerRadius)
                     .foregroundStyle(.colorButton)
                     .frame(width: 331, height: 80)
                 HStack {
