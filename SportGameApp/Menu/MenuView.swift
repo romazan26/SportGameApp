@@ -23,8 +23,11 @@ struct MenuView: View {
                         .font(.system(size: 41))
                         .bold()
                         .padding(.top, 160)
-                    
-                    ButtonMenu(text: "GAMES", icon: "gamecontroller.fill")
+                    NavigationLink {
+                        GamesView()
+                    } label: {
+                        ButtonMenu(text: "GAMES", icon: "gamecontroller.fill")
+                    }
                         .padding(.top, 40)
                     
                     StartButton(action: {

@@ -11,6 +11,7 @@ struct GamesView: View {
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .top)) {
             Color(.backGround)
+                .ignoresSafeArea()
             Image(.ball)
                 .resizable()
                 .frame(width: 347, height: 393)
@@ -32,12 +33,13 @@ struct GamesView: View {
                 }, text: "BONUS GAME", image: "star.fill")
             }.foregroundStyle(.white)
         }
+        .ignoresSafeArea()
         .toolbar(content: {
             ToolbarItem {
                 Image(systemName: "gear")
             }
         })
-        .ignoresSafeArea()
+        
     }
 }
 

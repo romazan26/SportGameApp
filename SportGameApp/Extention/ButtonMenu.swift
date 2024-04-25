@@ -11,10 +11,9 @@ struct ButtonMenu: View {
     
     var text = ""
     var icon = ""
-    var action: () -> Void = {}
     
     var body: some View {
-        Button(action: action, label: {
+        
             ZStack {
                 RoundedRectangle(cornerRadius: 25.0)
                     .foregroundStyle(.backGroundButtton)
@@ -24,9 +23,9 @@ struct ButtonMenu: View {
                         .font(.title3)
                         .bold()
                 }.foregroundStyle(.white)
-            }
-        }).frame(width: 331, height: 80)
-    }
+            }.frame(width: 331, height: 80)
+        }
+    
 }
 
 #Preview {
