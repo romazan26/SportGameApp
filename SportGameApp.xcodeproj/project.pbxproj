@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		302D2E682BD98AD60046B86F /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302D2E672BD98AD60046B86F /* MenuView.swift */; };
 		302D2E6A2BD98C1C0046B86F /* ButtonMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302D2E692BD98C1C0046B86F /* ButtonMenu.swift */; };
+		305A33D52BDBDD9700E364B4 /* YourPrizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305A33D42BDBDD9700E364B4 /* YourPrizeView.swift */; };
 		308C42212BDA2D7800518B3B /* GamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C42202BDA2D7800518B3B /* GamesView.swift */; };
 		308C42242BDA36E700518B3B /* BonusGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C42232BDA36E700518B3B /* BonusGameView.swift */; };
 		30CE2AA42BD82E310011811A /* SportGameAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CE2AA32BD82E310011811A /* SportGameAppApp.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		302D2E672BD98AD60046B86F /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		302D2E692BD98C1C0046B86F /* ButtonMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonMenu.swift; sourceTree = "<group>"; };
+		305A33D42BDBDD9700E364B4 /* YourPrizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourPrizeView.swift; sourceTree = "<group>"; };
 		308C42202BDA2D7800518B3B /* GamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesView.swift; sourceTree = "<group>"; };
 		308C42232BDA36E700518B3B /* BonusGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusGameView.swift; sourceTree = "<group>"; };
 		30CE2AA02BD82E310011811A /* SportGameApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportGameApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				308C42232BDA36E700518B3B /* BonusGameView.swift */,
+				305A33D42BDBDD9700E364B4 /* YourPrizeView.swift */,
 			);
 			path = BonusGame;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 			files = (
 				302D2E6A2BD98C1C0046B86F /* ButtonMenu.swift in Sources */,
 				30CE2AA62BD82E310011811A /* WelcomeView.swift in Sources */,
+				305A33D52BDBDD9700E364B4 /* YourPrizeView.swift in Sources */,
 				308C42212BDA2D7800518B3B /* GamesView.swift in Sources */,
 				308C42242BDA36E700518B3B /* BonusGameView.swift in Sources */,
 				302D2E682BD98AD60046B86F /* MenuView.swift in Sources */,

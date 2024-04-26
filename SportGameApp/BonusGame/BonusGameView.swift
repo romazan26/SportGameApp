@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct BonusGameView: View {
-    @State var degrees: Double = 180
+    @State private var degrees: Double = 0
+    @State private var isPresent = false
     var body: some View {
         ZStack{
             Color(.backGround)
@@ -48,12 +49,15 @@ struct BonusGameView: View {
                 StartButton(action: {
                     degrees = 0
                     degrees = Double.random(in: 1...1440)
-                    print(degrees)
+                    isPresent = true
                 }, text: "SPIN",cornerRadius: 48.0)
                     .padding(.bottom, 40)
                     .shadow(color: .blue, radius: 21)
             }.padding()
         }
+        .fullScreenCover(isPresented: $isPresent, content: {
+            YourPrizeView()
+        })
         .animation(.easeInOut(duration: 2), value: degrees)
         
         //MARK: - ToolBar
