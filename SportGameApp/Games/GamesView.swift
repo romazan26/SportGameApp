@@ -9,30 +9,43 @@ import SwiftUI
 
 struct GamesView: View {
     var body: some View {
-        ZStack(alignment: Alignment(horizontal: .center, vertical: .top)) {
-            Color(.backGround)
-                .ignoresSafeArea()
-            Image(.ball)
-                .resizable()
-                .frame(width: 347, height: 393)
-                .padding(.top, 345)
-                .padding(.leading,197)
             VStack{
                 Text("GAMES")
                     .foregroundStyle(.white)
                     .font(.system(size: 41))
                     .bold()
-                    .padding(.top, 160)
-                ButtonMenu(text: "QUIZ")
-                    .padding(.top, 40)
+                    .padding(.top, 140)
+                
+                //MARK: - Quiz
+                NavigationLink {
+                    QuizView()
+                } label: {ButtonMenu(text: "QUIZ")}.padding(.top, 40)
+
                 ButtonMenu(text: "PHOTO GUESS")
                 ButtonMenu(text: "TRUE/FALSE")
                 Spacer()
-                StartButton(action: {
-                    //action
-                }, text: "BONUS GAME", image: "star.fill")
-            }.foregroundStyle(.white)
-        }
+                NavigationLink {
+                    //destination
+                } label: {
+                    BluButtonView(text: "BONUS GAME", image: "star.fill")
+                }
+
+            }
+            .padding()
+            .background(content: {
+                ZStack(alignment: Alignment(horizontal: .center, vertical: .top)){
+                    Color(.backGround)
+                        .ignoresSafeArea()
+                    Image(.ball)
+                        .resizable()
+                        .frame(width: 245, height: 343)
+                        .padding(.top, 345)
+                        .padding(.leading,227)
+                }
+                       })
+            
+            .foregroundStyle(.white)
+        
         .ignoresSafeArea()
         .toolbar(content: {
             ToolbarItem {

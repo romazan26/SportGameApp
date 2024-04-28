@@ -12,13 +12,15 @@ struct StartButton: View {
     @State var text = ""
     @State var image = ""
     @State var cornerRadius: CGFloat = 25.0
+    var width: CGFloat = 331.0
+    var height: CGFloat = 80
     
     var body: some View {
         Button(action: action, label: {
             ZStack{
                 RoundedRectangle(cornerRadius: cornerRadius)
                     .foregroundStyle(.colorButton)
-                    .frame(width: 331, height: 80)
+                    .frame(width: width, height: height)
                 HStack {
                     Image(systemName: image)
                         .foregroundStyle(.white)

@@ -11,19 +11,29 @@ struct ButtonMenu: View {
     
     var text = ""
     var icon = ""
+    var multicolor = false
+    var answer = false
+    
+    @State private var background = Color(.backGroundButtton)
     
     var body: some View {
         
             ZStack {
                 RoundedRectangle(cornerRadius: 25.0)
-                    .foregroundStyle(.backGroundButtton)
+                    .foregroundStyle(background)
                 HStack{
                     Image(systemName: icon)
                     Text(text)
                         .font(.title3)
                         .bold()
                 }.foregroundStyle(.white)
-            }.frame(width: 331, height: 80)
+            }
+            .frame(width: 331, height: 80)
+            .onTapGesture {
+                if multicolor {
+                    background = answer ? .green : .red
+                }
+            }
         }
     
 }
