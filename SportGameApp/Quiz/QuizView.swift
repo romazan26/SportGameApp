@@ -18,6 +18,12 @@ struct QuizView: View {
             }.padding()
 
         }
+        .toolbar(content: {
+            ToolbarItem {
+                Image(systemName: "gearshape")
+                    .foregroundStyle(.white)
+            }
+        })
         .background(Image(.quiz)
             .resizable()
             .frame(width: 400)

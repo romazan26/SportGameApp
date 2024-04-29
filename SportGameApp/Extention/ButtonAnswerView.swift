@@ -1,22 +1,25 @@
 //
-//  ButtonMenu.swift
+//  ButtonAnswerView.swift
 //  SportGameApp
 //
-//  Created by Роман on 24.04.2024.
+//  Created by Роман on 28.04.2024.
 //
 
 import SwiftUI
 
-struct ButtonMenu: View {
-    
+struct ButtonAnswerView: View {
     var text = ""
     var icon = ""
+    var multicolor = false
+    var answer = false
+    
+    @State var background = Color(.backGroundButtton)
     
     var body: some View {
         
             ZStack {
                 RoundedRectangle(cornerRadius: 25.0)
-                    .foregroundStyle(.backGroundButtton)
+                    .foregroundStyle(background)
                 HStack{
                     Image(systemName: icon)
                     Text(text)
@@ -25,10 +28,14 @@ struct ButtonMenu: View {
                 }.foregroundStyle(.white)
             }
             .frame(width: 331, height: 80)
+            .onTapGesture {
+                if multicolor {
+                    background = answer ? .green : .red
+                }
+            }
         }
-    
 }
 
 #Preview {
-    ButtonMenu()
+    ButtonAnswerView()
 }

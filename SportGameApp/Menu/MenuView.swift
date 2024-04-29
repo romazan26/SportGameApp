@@ -28,7 +28,8 @@ struct MenuView: View {
                     } label: {
                         ButtonMenu(text: "GAMES", icon: "gamecontroller.fill")
                     }
-                        .padding(.top, 40)
+                    .padding(.top, 40)
+                    
                     NavigationLink {
                         BonusGameView()
                     } label: {

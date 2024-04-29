@@ -8,23 +8,29 @@
 import SwiftUI
 
 struct ToolBarMoneyView: View {
+    var money = 0
     var body: some View {
         HStack{
-            ZStack{
-                
-                RoundedRectangle(cornerRadius: 12.0)
-                    .foregroundStyle(.backGroundButtton)
-                Image(systemName: "plus")
-                    .foregroundStyle(.white)
-            }.frame(width: 38, height: 38)
+            //MARK: - Buttom plus
+            NavigationLink {
+                //destenation
+            } label: {
+                ZStack{
+                    RoundedRectangle(cornerRadius: 12.0)
+                        .foregroundStyle(.backGroundButtton)
+                    Image(systemName: "plus")
+                        .foregroundStyle(.white)
+                }.frame(width: 38, height: 38)
+            }
+            //MARK: - Money
             ZStack{
                 RoundedRectangle(cornerRadius: 13.0)
                     .foregroundStyle(.greenApp)
                 HStack {
                     Image(.money)
                         .resizable()
-                    .frame(width: 21, height: 21)
-                    Text("100")
+                        .frame(width: 21, height: 21)
+                    Text("\(money)")
                 }
                 .foregroundStyle(.white)
             }

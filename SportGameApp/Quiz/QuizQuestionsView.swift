@@ -29,39 +29,38 @@ struct QuizQuestionsView: View {
                 //MARK: - Question
                 ZStack{
                     Color(.backGroundButtton)
-                        .frame(width: 331, height: 134)
+                        .frame(width: 331, height: 114)
                         .cornerRadius(50)
                     Text(quiz[questionIndex].title)
                         .foregroundStyle(.white)
                         .padding(.horizontal, 40)
                         .multilineTextAlignment(.center)
                 }
-                
                 //MARK: - Answers
                 ForEach(quiz[questionIndex].answer) { answer in
-                    ButtonMenu(text: answer.title, multicolor: true, answer: answer.isTrue)
-                        .padding(6)
+                    ButtonAnswerView(text: answer.title, multicolor: true, answer: answer.isTrue)
+                        .padding(5)
                 }
-                
                 Spacer()
                 //MARK: - Botton bar
-                HStack{
-                    Image(.lighting)
-                        .resizable()
-                        .frame(width: 63, height: 53)
+                HStack(spacing: 20){
                     Spacer()
-                    Image(.pacmen)
-                        .resizable()
-                        .frame(width: 63, height: 53)
+                    PassIconView(image: Image(.lighting), number: 0)
+                    
+                    PassIconView(image: Image(.pacmen), number: 0)
                     Spacer()
                     StartButton(action: {
                         //actions
-                    }, image: "arrow.right",cornerRadius: 40, width: 118, height: 54).font(.title)
+                    }, image: "arrow.right",cornerRadius: 40, width: 110, height: 54).font(.title)
                 }.padding(.horizontal, 30)
                 
-            }
-            
+            }.padding(.bottom)
         }
+        .toolbar(content: {
+            ToolbarItem(placement: .topBarLeading) {
+                ToolBarMoneyView()
+            }
+        })
     }
 }
 
