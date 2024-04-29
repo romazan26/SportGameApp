@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct MenuView: View {
+    
+    @ObservedObject var viewModel = ViewModel()
+    
     var body: some View {
         NavigationStack {
             ZStack(alignment: Alignment(horizontal: .center, vertical: .top)) {
@@ -24,7 +27,7 @@ struct MenuView: View {
                         .bold()
                         .padding(.top, 160)
                     NavigationLink {
-                        GamesView()
+                        GamesView(viewModel: viewModel)
                     } label: {
                         ButtonMenu(text: "GAMES", icon: "gamecontroller.fill")
                     }
@@ -47,8 +50,11 @@ struct MenuView: View {
                             }
                         }
                     }
-                    
-                    ButtonMenu(text: "SHOP", icon: "cart.fill")
+                    NavigationLink {
+                        ShopView(viewModel: viewModel)
+                    } label: {
+                        ButtonMenu(text: "SHOP", icon: "cart.fill")
+                    }
                     
                     Spacer()
                     

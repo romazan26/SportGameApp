@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct GamesView: View {
+    @ObservedObject var viewModel: ViewModel
     var body: some View {
             VStack{
                 Text("GAMES")
@@ -18,7 +19,7 @@ struct GamesView: View {
                 
                 //MARK: - Quiz
                 NavigationLink {
-                    QuizView()
+                    QuizView(viewModel: viewModel)
                 } label: {ButtonMenu(text: "QUIZ")}.padding(.top, 40)
 
                 ButtonMenu(text: "PHOTO GUESS")
@@ -58,5 +59,5 @@ struct GamesView: View {
 }
 
 #Preview {
-    GamesView()
+    GamesView(viewModel: ViewModel())
 }

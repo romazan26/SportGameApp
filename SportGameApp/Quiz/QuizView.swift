@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct QuizView: View {
+    @ObservedObject var viewModel: ViewModel
     var body: some View {
         VStack{
             Spacer()
             NavigationLink {
-                QuizQuestionsView()
+                QuizQuestionsView(viewModel: viewModel)
             } label: {
                 BluButtonView(text: "START")
             }.padding()
@@ -33,5 +34,5 @@ struct QuizView: View {
 }
 
 #Preview {
-    QuizView()
+    QuizView(viewModel: ViewModel())
 }

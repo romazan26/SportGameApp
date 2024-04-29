@@ -25,6 +25,9 @@
 		30CE2AB62BD82F610011811A /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CE2AB52BD82F610011811A /* ProgressBarView.swift */; };
 		30CE2AB82BD83A820011811A /* StartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CE2AB72BD83A820011811A /* StartButton.swift */; };
 		30E637492BDFE2B00017A238 /* PassIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E637482BDFE2B00017A238 /* PassIconView.swift */; };
+		30E6374B2BE016550017A238 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E6374A2BE016550017A238 /* ViewModel.swift */; };
+		30E6374E2BE016BF0017A238 /* Shop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 30E6374C2BE016BF0017A238 /* Shop.xcdatamodeld */; };
+		30E637532BE026990017A238 /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E637522BE026990017A238 /* ShopView.swift */; };
 		30F714402BDADCF1000E4449 /* ToolBarMoneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F7143F2BDADCF1000E4449 /* ToolBarMoneyView.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +51,9 @@
 		30CE2AB52BD82F610011811A /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		30CE2AB72BD83A820011811A /* StartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButton.swift; sourceTree = "<group>"; };
 		30E637482BDFE2B00017A238 /* PassIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassIconView.swift; sourceTree = "<group>"; };
+		30E6374A2BE016550017A238 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		30E6374D2BE016BF0017A238 /* Shop.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shop.xcdatamodel; sourceTree = "<group>"; };
+		30E637522BE026990017A238 /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
 		30F7143F2BDADCF1000E4449 /* ToolBarMoneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarMoneyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				302D2E672BD98AD60046B86F /* MenuView.swift */,
+				30E6374A2BE016550017A238 /* ViewModel.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -123,6 +130,7 @@
 		30CE2AA22BD82E310011811A /* SportGameApp */ = {
 			isa = PBXGroup;
 			children = (
+				30E637512BE026840017A238 /* Shop */,
 				30CE2AB42BD82F460011811A /* Extention */,
 				305A33FD2BDED0C100E364B4 /* Quiz */,
 				308C42222BDA36CB00518B3B /* BonusGame */,
@@ -133,6 +141,7 @@
 				30CE2AA32BD82E310011811A /* SportGameAppApp.swift */,
 				30CE2AA72BD82E320011811A /* Assets.xcassets */,
 				30CE2AA92BD82E320011811A /* Preview Content */,
+				30E6374C2BE016BF0017A238 /* Shop.xcdatamodeld */,
 			);
 			path = SportGameApp;
 			sourceTree = "<group>";
@@ -166,6 +175,14 @@
 				30E637482BDFE2B00017A238 /* PassIconView.swift */,
 			);
 			path = Extention;
+			sourceTree = "<group>";
+		};
+		30E637512BE026840017A238 /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				30E637522BE026990017A238 /* ShopView.swift */,
+			);
+			path = Shop;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,12 +265,15 @@
 				308C42242BDA36E700518B3B /* BonusGameView.swift in Sources */,
 				302D2E682BD98AD60046B86F /* MenuView.swift in Sources */,
 				305A34052BDEE9F500E364B4 /* ButtonAnswerView.swift in Sources */,
+				30E6374B2BE016550017A238 /* ViewModel.swift in Sources */,
 				30F714402BDADCF1000E4449 /* ToolBarMoneyView.swift in Sources */,
+				30E6374E2BE016BF0017A238 /* Shop.xcdatamodeld in Sources */,
 				30CE2AB62BD82F610011811A /* ProgressBarView.swift in Sources */,
 				30CE2AB82BD83A820011811A /* StartButton.swift in Sources */,
 				305A34032BDED7B100E364B4 /* QuizQuestionsView.swift in Sources */,
 				30CE2AA42BD82E310011811A /* SportGameAppApp.swift in Sources */,
 				305A34012BDED33A00E364B4 /* BluButtonView.swift in Sources */,
+				30E637532BE026990017A238 /* ShopView.swift in Sources */,
 				30CE2AB32BD82E940011811A /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,6 +480,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		30E6374C2BE016BF0017A238 /* Shop.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				30E6374D2BE016BF0017A238 /* Shop.xcdatamodel */,
+			);
+			currentVersion = 30E6374D2BE016BF0017A238 /* Shop.xcdatamodel */;
+			path = Shop.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 30CE2A982BD82E310011811A /* Project object */;
 }

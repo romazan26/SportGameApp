@@ -1,16 +1,17 @@
 //
-//  QuizQuestionsView.swift
+//  QuestionsView.swift
 //  SportGameApp
 //
-//  Created by Роман on 28.04.2024.
+//  Created by Роман on 29.04.2024.
 //
 
 import SwiftUI
 
-struct QuizQuestionsView: View {
+struct QuestionsView: View {
     
     @ObservedObject var viewModel: ViewModel
-    
+    var quiz = QuizQuestion.getQuizQuestions()
+    private var questionIndex = 0
     var body: some View {
         ZStack {
             Color(.backGround)
@@ -21,7 +22,7 @@ struct QuizQuestionsView: View {
                     Color(.backGroundButtton)
                         .frame(width: 65, height: 31)
                         .cornerRadius(50)
-                    Text("\(viewModel.questionIndex + 1) / \(viewModel.quiz.count)")
+                    Text("\(questionIndex + 1) / \(quiz.count)")
                         .foregroundStyle(.white)
                         .padding(.horizontal, 40)
                         .multilineTextAlignment(.center)
@@ -32,13 +33,13 @@ struct QuizQuestionsView: View {
                     Color(.backGroundButtton)
                         .frame(width: 331, height: 114)
                         .cornerRadius(50)
-                    Text(viewModel.quiz[viewModel.questionIndex].title)
+                    Text(quiz[questionIndex].title)
                         .foregroundStyle(.white)
                         .padding(.horizontal, 40)
                         .multilineTextAlignment(.center)
                 }
                 //MARK: - Answers
-                ForEach(viewModel.quiz[viewModel.questionIndex].answer) { answer in
+                ForEach(quiz[questionIndex].answer) { answer in
                     ButtonAnswerView(text: answer.title, multicolor: true, answer: answer.isTrue)
                         .padding(5)
                 }
@@ -63,8 +64,9 @@ struct QuizQuestionsView: View {
             }
         })
     }
+    }
 }
 
 #Preview {
-    QuizQuestionsView(viewModel: ViewModel())
+    QuestionsView(viewModel: ViewModel())
 }
