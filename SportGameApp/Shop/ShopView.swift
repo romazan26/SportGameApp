@@ -120,29 +120,32 @@ struct ShopView: View {
                 }.padding(.bottom, 20)
                 
                 //MARK: - Button BUY
-                ZStack{
-                    RoundedRectangle(cornerRadius: 50)
-                        .foregroundStyle(.colorButton)
-                        .frame(width: 331, height: 80)
-                    HStack(spacing: 20) {
-                        Text("BUY")
-                            .foregroundStyle(.white)
-                            .font(.title2)
-                            .bold()
-                        Image(.money)
-                            .resizable()
-                            .foregroundStyle(.white)
-                            .frame(width: 26, height: 26)
-                        Text("\(viewModel.priceBasket)")
-                            .foregroundStyle(.white)
-                            .font(.title2)
-                            .bold()
+                Button(action: {viewModel.buy()}, label: {
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 50)
+                            .foregroundStyle(.colorButton)
+                            .frame(width: 331, height: 80)
+                        HStack(spacing: 20) {
+                            Text("BUY")
+                                .foregroundStyle(.white)
+                                .font(.title2)
+                                .bold()
+                            Image(.money)
+                                .resizable()
+                                .foregroundStyle(.white)
+                                .frame(width: 26, height: 26)
+                            Text("\(viewModel.priceBasket)")
+                                .foregroundStyle(.white)
+                                .font(.title2)
+                                .bold()
+                        }
                     }
-                }
+                })
+                
             }.padding()
         }.toolbar(content: {
             ToolbarItem(placement: .topBarLeading) {
-                ToolBarMoneyView(money: 100)
+                ToolBarMoneyView(money: Int(viewModel.store[0].money))
             }
             ToolbarItem(placement: .topBarTrailing) {
                 NavigationLink {

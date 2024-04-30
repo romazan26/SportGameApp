@@ -11,7 +11,6 @@ import Foundation
 final class ViewModel: ObservableObject {
     @Published var store: [Store]!
     
-    @Published var simpleMoney = 0
     @Published var simpleLighting = 0
     @Published var simplePacmen = 0
     
@@ -19,6 +18,7 @@ final class ViewModel: ObservableObject {
     @Published var questionIndex = 0
     
     @Published var priceBasket = 0
+    @Published var error = ""
     
     //MARK: - CoreDate
     let container = NSPersistentContainer(name: "Shop")
@@ -29,6 +29,7 @@ final class ViewModel: ObservableObject {
                 print("Core data failed to load: \(error.localizedDescription)")
             }
         }
+        addStore()
         fetchShop()
     }
     
@@ -49,5 +50,40 @@ final class ViewModel: ObservableObject {
         }catch let error {
             print("Error save: \(error)")
         }
+    }
+    
+    func addStore(){
+        let newStore = Store(context: container.viewContext)
+        newStore.lighting = 0
+        newStore.money = 0
+        newStore.pacmen = 0
+        
+        saveDate()
+    }
+    //MARK: - Buy
+    func buy(){
+        if store[0].money >= Int64(priceBasket){
+            store[0].money -= Int64(priceBasket)
+            store[0].lighting += Int64(simpleLighting)
+            store[0].pacmen += Int64(simplePacmen)
+            
+            saveDate()
+            clean()
+        } else{
+            error = "Не достаточно денег"
+        }
+    }
+    
+    //MARK: - Win
+    func win(){
+        store[0].money += 50
+        saveDate()
+    }
+    
+    //MARK: - Clean property
+    private func clean() {
+        simplePacmen = 0
+        simpleLighting = 0
+        priceBasket = 0
     }
 }

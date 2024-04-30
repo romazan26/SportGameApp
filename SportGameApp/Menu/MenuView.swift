@@ -10,6 +10,7 @@ import SwiftUI
 struct MenuView: View {
     
     @ObservedObject var viewModel = ViewModel()
+    @AppStorage("isFirstStart") var isFirstStart: Bool?
     
     var body: some View {
         NavigationStack {
@@ -65,7 +66,12 @@ struct MenuView: View {
                 
                 
             }.ignoresSafeArea()
-        }
+        }.onAppear(perform: {
+            if !(isFirstStart ?? false) {
+                viewModel.addStore()
+                isFirstStart = true
+            }
+        })
         
     }
 }

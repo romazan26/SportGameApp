@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct SportGameAppApp: App {
+    @AppStorage("isFirstStart") var isFirstStart: Bool = false
     var body: some Scene {
         WindowGroup {
             WelcomeView()

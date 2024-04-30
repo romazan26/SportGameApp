@@ -51,7 +51,7 @@ struct QuizQuestionsView: View {
                     PassIconView(image: Image(.pacmen), number: 0)
                     Spacer()
                     StartButton(action: {
-                        //actions
+                        viewModel.win()
                     }, image: "arrow.right",cornerRadius: 40, width: 110, height: 54).font(.title)
                 }.padding(.horizontal, 30)
                 
