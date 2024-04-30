@@ -17,6 +17,8 @@
 		305A34052BDEE9F500E364B4 /* ButtonAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305A34042BDEE9F500E364B4 /* ButtonAnswerView.swift */; };
 		308C42212BDA2D7800518B3B /* GamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C42202BDA2D7800518B3B /* GamesView.swift */; };
 		308C42242BDA36E700518B3B /* BonusGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C42232BDA36E700518B3B /* BonusGameView.swift */; };
+		30AF4FB42BE17A090048D6EB /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AF4FB32BE17A090048D6EB /* BlurView.swift */; };
+		30AF4FB62BE17A7A0048D6EB /* InfoPassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AF4FB52BE17A7A0048D6EB /* InfoPassView.swift */; };
 		30CE2AA42BD82E310011811A /* SportGameAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CE2AA32BD82E310011811A /* SportGameAppApp.swift */; };
 		30CE2AA62BD82E310011811A /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CE2AA52BD82E310011811A /* WelcomeView.swift */; };
 		30CE2AA82BD82E320011811A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30CE2AA72BD82E320011811A /* Assets.xcassets */; };
@@ -42,6 +44,8 @@
 		305A34042BDEE9F500E364B4 /* ButtonAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAnswerView.swift; sourceTree = "<group>"; };
 		308C42202BDA2D7800518B3B /* GamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesView.swift; sourceTree = "<group>"; };
 		308C42232BDA36E700518B3B /* BonusGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusGameView.swift; sourceTree = "<group>"; };
+		30AF4FB32BE17A090048D6EB /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		30AF4FB52BE17A7A0048D6EB /* InfoPassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPassView.swift; sourceTree = "<group>"; };
 		30CE2AA02BD82E310011811A /* SportGameApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportGameApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30CE2AA32BD82E310011811A /* SportGameAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportGameAppApp.swift; sourceTree = "<group>"; };
 		30CE2AA52BD82E310011811A /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -90,6 +94,7 @@
 			children = (
 				305A33FE2BDED0DB00E364B4 /* QuizView.swift */,
 				305A34022BDED7B100E364B4 /* QuizQuestionsView.swift */,
+				30AF4FB52BE17A7A0048D6EB /* InfoPassView.swift */,
 			);
 			path = Quiz;
 			sourceTree = "<group>";
@@ -173,6 +178,7 @@
 				305A34002BDED33A00E364B4 /* BluButtonView.swift */,
 				305A34042BDEE9F500E364B4 /* ButtonAnswerView.swift */,
 				30E637482BDFE2B00017A238 /* PassIconView.swift */,
+				30AF4FB32BE17A090048D6EB /* BlurView.swift */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
@@ -263,12 +269,14 @@
 				305A33FF2BDED0DB00E364B4 /* QuizView.swift in Sources */,
 				308C42212BDA2D7800518B3B /* GamesView.swift in Sources */,
 				308C42242BDA36E700518B3B /* BonusGameView.swift in Sources */,
+				30AF4FB42BE17A090048D6EB /* BlurView.swift in Sources */,
 				302D2E682BD98AD60046B86F /* MenuView.swift in Sources */,
 				305A34052BDEE9F500E364B4 /* ButtonAnswerView.swift in Sources */,
 				30E6374B2BE016550017A238 /* ViewModel.swift in Sources */,
 				30F714402BDADCF1000E4449 /* ToolBarMoneyView.swift in Sources */,
 				30E6374E2BE016BF0017A238 /* Shop.xcdatamodeld in Sources */,
 				30CE2AB62BD82F610011811A /* ProgressBarView.swift in Sources */,
+				30AF4FB62BE17A7A0048D6EB /* InfoPassView.swift in Sources */,
 				30CE2AB82BD83A820011811A /* StartButton.swift in Sources */,
 				305A34032BDED7B100E364B4 /* QuizQuestionsView.swift in Sources */,
 				30CE2AA42BD82E310011811A /* SportGameAppApp.swift in Sources */,

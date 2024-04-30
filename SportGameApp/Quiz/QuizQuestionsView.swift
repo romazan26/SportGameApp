@@ -11,6 +11,8 @@ struct QuizQuestionsView: View {
     
     @ObservedObject var viewModel: ViewModel
     
+    @State var isPresent = false
+    
     var body: some View {
         ZStack {
             Color(.backGround)
@@ -57,10 +59,26 @@ struct QuizQuestionsView: View {
                 
             }.padding(.bottom)
         }
+        .fullScreenCover(isPresented: $isPresent, content: {
+            InfoPassView()
+        })
         .toolbar(content: {
             ToolbarItem(placement: .topBarLeading) {
                 ToolBarMoneyView()
             }
+            ToolbarItem(placement: .topBarTrailing) {
+                Button(action: {
+                    isPresent = true
+                }, label: {
+                    ZStack{
+                        Circle()
+                            .frame(width: 27)
+                            .foregroundStyle(.backGroundButtton)
+                        Text("i").foregroundStyle(.white)
+                    }
+                })
+            }
+            
         })
     }
 }
