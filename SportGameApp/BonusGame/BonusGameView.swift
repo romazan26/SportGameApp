@@ -17,8 +17,7 @@ struct BonusGameView: View {
             VStack {
                 Text("BONUS GAME")
                     .foregroundStyle(.white)
-                    .font(.system(size: 41))
-                    .bold()
+                    .font(.system(size: 41,weight: .bold))
                     .padding(.top, 30)
                     .minimumScaleFactor(0.8)
                 Spacer()

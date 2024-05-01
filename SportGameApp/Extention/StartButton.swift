@@ -26,8 +26,8 @@ struct StartButton: View {
                         .foregroundStyle(.white)
                     Text(text)
                         .foregroundStyle(.white)
-                        .font(.title2)
-                        .bold()
+                        //.font(.title2)
+                        .font(.system( size: 34, weight: .bold))
                 }
             }
         })

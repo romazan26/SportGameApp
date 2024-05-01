@@ -28,7 +28,7 @@ struct InfoPassView: View {
                         Text("Delete two objects")
                             .foregroundStyle(.black)
                             .font(.title3)
-                            .bold()
+                            .font(.system( size: 30, weight: .bold))
                     }
                     HStack(spacing: 20){
                         Image(.pacmen)
@@ -36,8 +36,8 @@ struct InfoPassView: View {
                             .frame(width: 63, height: 63)
                         Text("Delete one objects")
                             .foregroundStyle(.black)
-                            .font(.title3)
-                            .bold()
+                            //.font(.title3)
+                            .font(.system( size: 34, weight: .bold))
                     }
                 }
             }

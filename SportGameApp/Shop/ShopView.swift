@@ -16,8 +16,8 @@ struct ShopView: View {
             VStack{
                 Text("SHOP")
                     .foregroundStyle(.white)
-                    .font(.system(size: 41))
-                    .bold()
+                    .font(.system(size: 41,weight: .bold))
+                    
                 Spacer()
                 //MARK: - add Pacman
                 HStack{
@@ -42,8 +42,8 @@ struct ShopView: View {
                     Spacer()
                     Text("Delete one object")
                         .foregroundStyle(.white)
-                        .font(.title2)
-                        .bold()
+                        //.font(.title2)
+                        .font(.system( size: 34, weight: .bold))
                     
                     Spacer()
                     
@@ -84,8 +84,8 @@ struct ShopView: View {
                     Spacer()
                     Text("Delete two object")
                         .foregroundStyle(.white)
-                        .font(.title2)
-                        .bold()
+                       // .font(.title2)
+                        .font(.system( size: 34, weight: .bold))
                     
                     Spacer()
                     
@@ -128,16 +128,16 @@ struct ShopView: View {
                         HStack(spacing: 20) {
                             Text("BUY")
                                 .foregroundStyle(.white)
-                                .font(.title2)
-                                .bold()
+                               // .font(.title2)
+                                .font(.system( size: 34, weight: .bold))
                             Image(.money)
                                 .resizable()
                                 .foregroundStyle(.white)
                                 .frame(width: 26, height: 26)
                             Text("\(viewModel.priceBasket)")
                                 .foregroundStyle(.white)
-                                .font(.title2)
-                                .bold()
+                                //.font(.title2)
+                                .font(.system( size: 34, weight: .bold))
                         }
                     }
                 })

@@ -13,8 +13,7 @@ struct GamesView: View {
             VStack{
                 Text("GAMES")
                     .foregroundStyle(.white)
-                    .font(.system(size: 41))
-                    .bold()
+                    .font(.system(size: 41,weight: .bold))
                     .padding(.top, 140)
                 
                 //MARK: - Quiz

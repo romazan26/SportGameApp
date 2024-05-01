@@ -19,8 +19,8 @@ struct WelcomeView: View {
                         VStack{
                             Text("WELCOME")
                                 .foregroundStyle(.white)
-                                .font(.system(size: 55))
-                                .bold()
+                                .font(.system(size: 55,weight: .bold))
+                                
                             Text("Test your sports knowledge now")
                                 .foregroundStyle(.white)
                                 .font(.system(size: 15))

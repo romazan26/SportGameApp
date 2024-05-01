@@ -13,7 +13,7 @@ struct MenuView: View {
     @AppStorage("isFirstStart") var isFirstStart: Bool?
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             ZStack(alignment: Alignment(horizontal: .center, vertical: .top)) {
                 Color(.backGround)
                 Image(.ball)
@@ -24,8 +24,7 @@ struct MenuView: View {
                 VStack {
                     Text("MENU")
                         .foregroundStyle(.white)
-                        .font(.system(size: 41))
-                        .bold()
+                        .font(.system(size: 41,weight: .bold))
                         .padding(.top, 160)
                     NavigationLink {
                         GamesView(viewModel: viewModel)
@@ -46,8 +45,8 @@ struct MenuView: View {
                                     .foregroundStyle(.white)
                                 Text("BONUS GAME")
                                     .foregroundStyle(.white)
-                                    .font(.title2)
-                                    .bold()
+                                   // .font(.title2)
+                                    .font(.system( size: 34, weight: .bold))
                             }
                         }
                     }
