@@ -8,13 +8,11 @@
 import SwiftUI
 
 struct InfoPassView: View {
-    @Environment(\.dismiss) var dismiss
     var body: some View {
         ZStack {
-            BlurUIView(style: .light)
+            BlurUIView(style: .systemChromeMaterialDark)
+                .opacity(0.8)
                 .ignoresSafeArea()
-                .blur(radius: 3.0)
-                .opacity(0.1)
                 
             ZStack{
                 RoundedRectangle(cornerRadius: 29)
@@ -27,8 +25,7 @@ struct InfoPassView: View {
                             .frame(width: 63, height: 63)
                         Text("Delete two objects")
                             .foregroundStyle(.black)
-                            .font(.title3)
-                            .font(.system( size: 30, weight: .bold))
+                            .font(.system( size: 20, weight: .bold))
                     }
                     HStack(spacing: 20){
                         Image(.pacmen)
@@ -36,16 +33,11 @@ struct InfoPassView: View {
                             .frame(width: 63, height: 63)
                         Text("Delete one objects")
                             .foregroundStyle(.black)
-                            //.font(.title3)
-                            .font(.system( size: 34, weight: .bold))
+                            .font(.system( size: 20, weight: .bold))
                     }
                 }
             }
         }
-        
-        .onTapGesture(perform: {
-            dismiss()
-        })
     }
 }
 
