@@ -12,6 +12,7 @@ struct StartButton: View {
     @State var text = ""
     @State var image = ""
     @State var cornerRadius: CGFloat = 25.0
+    var money = false
     var width: CGFloat = 331.0
     var height: CGFloat = 80
     
@@ -22,12 +23,15 @@ struct StartButton: View {
                     .foregroundStyle(.colorButton)
                     .frame(width: width, height: height)
                 HStack {
-                    Image(systemName: image)
-                        .foregroundStyle(.white)
+                    if !money{
+                        Image(systemName: image)
+                            .foregroundStyle(.white)
+                    } else {
+                        Image(.money)
+                    }
                     Text(text)
                         .foregroundStyle(.white)
-                        //.font(.title2)
-                        .font(.system( size: 34, weight: .bold))
+                        .font(.system( size: 20, weight: .bold))
                 }
             }
         })

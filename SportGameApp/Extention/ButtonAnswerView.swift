@@ -10,8 +10,11 @@ import SwiftUI
 struct ButtonAnswerView: View {
     var text = ""
     var icon = ""
-    var multicolor = false
+    var multicolor = true
     var answer = false
+    var question: Answer
+    @ObservedObject var viewModel: ViewModel
+    
     
     @State var background = Color(.backGroundButtton)
     
@@ -20,22 +23,23 @@ struct ButtonAnswerView: View {
             ZStack {
                 RoundedRectangle(cornerRadius: 25.0)
                     .foregroundStyle(background)
-                HStack{
-                    Image(systemName: icon)
-                    Text(text)
-                        .font(.title3)
-                        .bold()
-                }.foregroundStyle(.white)
+
+                    Text(question.title)
+                    .font(.system(size: 20, weight: .bold))
+                .foregroundStyle(.white)
             }
             .frame(width: 331, height: 80)
             .onTapGesture {
                 if multicolor {
-                    background = answer ? .green : .red
+                    if  question.isTrue {
+                        viewModel.goodAnswer += 1
+                    }
+                    background = question.isTrue ? .green : .red
                 }
             }
         }
 }
 
 #Preview {
-    ButtonAnswerView()
+    ButtonAnswerView( question: QuizQuestion.getQuizQuestions()[0].answer[0], viewModel: ViewModel())
 }

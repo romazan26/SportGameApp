@@ -9,7 +9,7 @@ import SwiftUI
 
 struct InfoPassView: View {
     var body: some View {
-        ZStack {
+        ZStack(alignment: .top) {
             BlurUIView(style: .systemChromeMaterialDark)
                 .opacity(0.8)
                 .ignoresSafeArea()
@@ -36,7 +36,7 @@ struct InfoPassView: View {
                             .font(.system( size: 20, weight: .bold))
                     }
                 }
-            }
+            }.padding(.top, 100)
         }
     }
 }

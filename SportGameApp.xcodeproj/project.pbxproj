@@ -15,6 +15,8 @@
 		305A34012BDED33A00E364B4 /* BluButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305A34002BDED33A00E364B4 /* BluButtonView.swift */; };
 		305A34032BDED7B100E364B4 /* QuizQuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305A34022BDED7B100E364B4 /* QuizQuestionsView.swift */; };
 		305A34052BDEE9F500E364B4 /* ButtonAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305A34042BDEE9F500E364B4 /* ButtonAnswerView.swift */; };
+		3069A4342BE2D61D007EC393 /* WinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3069A4332BE2D61D007EC393 /* WinnerView.swift */; };
+		3069A4362BE2DA35007EC393 /* Tempdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3069A4352BE2DA35007EC393 /* Tempdata.swift */; };
 		308C42212BDA2D7800518B3B /* GamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C42202BDA2D7800518B3B /* GamesView.swift */; };
 		308C42242BDA36E700518B3B /* BonusGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C42232BDA36E700518B3B /* BonusGameView.swift */; };
 		30AF4FB42BE17A090048D6EB /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AF4FB32BE17A090048D6EB /* BlurView.swift */; };
@@ -42,6 +44,8 @@
 		305A34002BDED33A00E364B4 /* BluButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluButtonView.swift; sourceTree = "<group>"; };
 		305A34022BDED7B100E364B4 /* QuizQuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestionsView.swift; sourceTree = "<group>"; };
 		305A34042BDEE9F500E364B4 /* ButtonAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAnswerView.swift; sourceTree = "<group>"; };
+		3069A4332BE2D61D007EC393 /* WinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerView.swift; sourceTree = "<group>"; };
+		3069A4352BE2DA35007EC393 /* Tempdata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tempdata.swift; sourceTree = "<group>"; };
 		308C42202BDA2D7800518B3B /* GamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesView.swift; sourceTree = "<group>"; };
 		308C42232BDA36E700518B3B /* BonusGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusGameView.swift; sourceTree = "<group>"; };
 		30AF4FB32BE17A090048D6EB /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
@@ -95,6 +99,7 @@
 				305A33FE2BDED0DB00E364B4 /* QuizView.swift */,
 				305A34022BDED7B100E364B4 /* QuizQuestionsView.swift */,
 				30AF4FB52BE17A7A0048D6EB /* InfoPassView.swift */,
+				3069A4332BE2D61D007EC393 /* WinnerView.swift */,
 			);
 			path = Quiz;
 			sourceTree = "<group>";
@@ -147,6 +152,7 @@
 				30CE2AA72BD82E320011811A /* Assets.xcassets */,
 				30CE2AA92BD82E320011811A /* Preview Content */,
 				30E6374C2BE016BF0017A238 /* Shop.xcdatamodeld */,
+				3069A4352BE2DA35007EC393 /* Tempdata.swift */,
 			);
 			path = SportGameApp;
 			sourceTree = "<group>";
@@ -278,7 +284,9 @@
 				30CE2AB62BD82F610011811A /* ProgressBarView.swift in Sources */,
 				30AF4FB62BE17A7A0048D6EB /* InfoPassView.swift in Sources */,
 				30CE2AB82BD83A820011811A /* StartButton.swift in Sources */,
+				3069A4362BE2DA35007EC393 /* Tempdata.swift in Sources */,
 				305A34032BDED7B100E364B4 /* QuizQuestionsView.swift in Sources */,
+				3069A4342BE2D61D007EC393 /* WinnerView.swift in Sources */,
 				30CE2AA42BD82E310011811A /* SportGameAppApp.swift in Sources */,
 				305A34012BDED33A00E364B4 /* BluButtonView.swift in Sources */,
 				30E637532BE026990017A238 /* ShopView.swift in Sources */,

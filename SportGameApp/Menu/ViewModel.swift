@@ -16,6 +16,8 @@ final class ViewModel: ObservableObject {
     
     @Published var quiz = QuizQuestion.getQuizQuestions()
     @Published var questionIndex = 0
+    @Published var goodAnswer = 0
+    @Published var win = true
     
     @Published var priceBasket = 0
     @Published var error = ""
@@ -73,11 +75,22 @@ final class ViewModel: ObservableObject {
             error = "Не достаточно денег"
         }
     }
+    // MARK: QuizVictory
+    func quizVictory(){
+        if goodAnswer == quiz.count {
+            win = true
+        } else {
+            win = false
+        }
+    }
+    
     
     //MARK: - Win
-    func win(){
-        store[0].money += 50
+    func win(money: Int){
+        store[0].money += Int64(money)
         saveDate()
+        goodAnswer = 0
+        win = false
     }
     
     //MARK: - Clean property

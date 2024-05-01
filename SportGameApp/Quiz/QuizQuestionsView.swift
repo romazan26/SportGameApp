@@ -12,6 +12,7 @@ struct QuizQuestionsView: View {
     @ObservedObject var viewModel: ViewModel
     
     @State var isPresent = false
+    @State var gameOver = false
     
     var body: some View {
         ZStack {
@@ -41,7 +42,7 @@ struct QuizQuestionsView: View {
                     }
                     //MARK: - Answers
                     ForEach(viewModel.quiz[viewModel.questionIndex].answer) { answer in
-                        ButtonAnswerView(text: answer.title, multicolor: true, answer: answer.isTrue)
+                        ButtonAnswerView( question: answer, viewModel: viewModel)
                             .padding(5)
                     }
                     Spacer()
@@ -53,7 +54,10 @@ struct QuizQuestionsView: View {
                         PassIconView(image: Image(.pacmen), number: 0)
                         Spacer()
                         StartButton(action: {
-                            viewModel.win()
+                            if viewModel.questionIndex + 1 == viewModel.quiz.count{
+                                viewModel.quizVictory()
+                                gameOver = true
+                            }
                         }, image: "arrow.right",cornerRadius: 40, width: 110, height: 54).font(.title)
                     }.padding(.horizontal, 30)
                     
@@ -64,11 +68,14 @@ struct QuizQuestionsView: View {
                         isPresent = false
                     }
             }
+            if gameOver {
+                WinnerView(viewModel: viewModel)
+            }
         }
         .animation(.easeInOut, value: isPresent)
         .toolbar(content: {
             ToolbarItem(placement: .topBarLeading) {
-                ToolBarMoneyView()
+                ToolBarMoneyView(money: Int(viewModel.store[0].money))
             }
             ToolbarItem(placement: .topBarTrailing) {
                 Button(action: {
