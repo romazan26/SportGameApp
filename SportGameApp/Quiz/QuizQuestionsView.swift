@@ -41,10 +41,67 @@ struct QuizQuestionsView: View {
                             .multilineTextAlignment(.center)
                     }
                     //MARK: - Answers
-                    ForEach(viewModel.quiz[viewModel.questionIndex].answer) { answer in
-                        ButtonAnswerView( question: answer, viewModel: viewModel)
-                            .padding(5)
-                    }
+                    
+                    VStack(spacing: 15) {
+                        ButtonAnswerView( question: viewModel.quiz[viewModel.questionIndex].answer[0],
+                                              color: viewModel.color1)
+                                .onTapGesture {
+                                    if !viewModel.choisOn{
+                                        if viewModel.quiz[viewModel.questionIndex].answer[0].isTrue{
+                                            viewModel.goodAnswer += 1
+                                        }
+                                        viewModel.checkColor()
+                                        viewModel.color1 = viewModel.color
+                                        viewModel.color2 = false
+                                        viewModel.color3 = false
+                                        viewModel.color4 = false
+                                    }
+                                }
+                        ButtonAnswerView( question: viewModel.quiz[viewModel.questionIndex].answer[1],
+                                              color: viewModel.color2)
+                                .onTapGesture {
+                                    if !viewModel.choisOn{
+                                        if viewModel.quiz[viewModel.questionIndex].answer[1].isTrue{
+                                            viewModel.goodAnswer += 1
+                                        }
+                                        viewModel.checkColor()
+                                        viewModel.color2 = viewModel.color
+                                        viewModel.color1 = false
+                                        viewModel.color3 = false
+                                        viewModel.color4 = false
+                                    }
+                                }
+                        ButtonAnswerView( question: viewModel.quiz[viewModel.questionIndex].answer[2],
+                                              color: viewModel.color3)
+                                .onTapGesture {
+                                    if !viewModel.choisOn{
+                                        if viewModel.quiz[viewModel.questionIndex].answer[2].isTrue{
+                                            viewModel.goodAnswer += 1
+                                        }
+                                        viewModel.checkColor()
+                                        viewModel.color3 = viewModel.color
+                                        viewModel.color2 = false
+                                        viewModel.color1 = false
+                                        viewModel.color4 = false
+                                    }
+                                }
+                        ButtonAnswerView( question: viewModel.quiz[viewModel.questionIndex].answer[3],
+                                              color: viewModel.color4)
+                                .onTapGesture {
+                                    if !viewModel.choisOn{
+                                        if viewModel.quiz[viewModel.questionIndex].answer[3].isTrue{
+                                            viewModel.goodAnswer += 1
+                                        }
+                                        viewModel.checkColor()
+                                        viewModel.color4 = viewModel.color
+                                        viewModel.color2 = false
+                                        viewModel.color3 = false
+                                        viewModel.color1 = false
+                                    }
+                                }
+                            
+                    }.padding()
+                    
                     Spacer()
                     //MARK: - Botton bar
                     HStack(spacing: 20){

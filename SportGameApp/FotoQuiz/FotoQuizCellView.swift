@@ -10,6 +10,7 @@ import SwiftUI
 struct FotoQuizCellView: View {
     @ObservedObject var viewModel: ViewModel
     
+    
     var body: some View {
         VStack(spacing: 20) {
             Image(viewModel.fotoQuiz[viewModel.questionIndex].foto)
@@ -20,21 +21,71 @@ struct FotoQuizCellView: View {
                     ButtonAnswerView(width: 159,
                                      height: 80,
                                      question: viewModel.fotoQuiz[viewModel.questionIndex].answer[0],
-                                     viewModel: viewModel)
+                                     color: viewModel.color1)
+                    .onTapGesture {
+                        if !viewModel.choisOn{
+                            if viewModel.fotoQuiz[viewModel.questionIndex].answer[0].isTrue{
+                                viewModel.goodAnswer += 1
+                            }
+                            viewModel.checkColor()
+                            viewModel.color1 = viewModel.color
+                            viewModel.color2 = false
+                            viewModel.color3 = false
+                            viewModel.color4 = false
+                        }
+                    }
                     ButtonAnswerView(width: 159,
                                      height: 80,
                                      question: viewModel.fotoQuiz[viewModel.questionIndex].answer[2],
-                                     viewModel: viewModel)
+                                     color: viewModel.color2)
+                    .onTapGesture {
+                        if !viewModel.choisOn{
+                            if viewModel.fotoQuiz[viewModel.questionIndex].answer[2].isTrue{
+                                viewModel.goodAnswer += 1
+                            }
+                            viewModel.checkColor()
+                            viewModel.color2 = viewModel.color
+                            viewModel.color1 = false
+                            viewModel.color3 = false
+                            viewModel.color4 = false
+                        }
+                    }
                 }
                 VStack(spacing: 10){
                     ButtonAnswerView(width: 159,
                                      height: 80,
                                      question: viewModel.fotoQuiz[viewModel.questionIndex].answer[1],
-                                     viewModel: viewModel)
+                                     color: viewModel.color3)
+                    .onTapGesture {
+                        if !viewModel.choisOn{
+                            if viewModel.fotoQuiz[viewModel.questionIndex].answer[1].isTrue{
+                                viewModel.goodAnswer += 1
+                            }
+                            viewModel.checkColor()
+                            viewModel.color3 = viewModel.color
+                            viewModel.color2 = false
+                            viewModel.color1 = false
+                            viewModel.color4 = false
+                        }
+                    }
+
                     ButtonAnswerView(width: 159,
                                      height: 80,
                                      question: viewModel.fotoQuiz[viewModel.questionIndex].answer[3],
-                                     viewModel: viewModel)
+                                     color: viewModel.color4)
+                    .onTapGesture {
+                        if !viewModel.choisOn{
+                            if viewModel.fotoQuiz[viewModel.questionIndex].answer[3].isTrue{
+                                viewModel.goodAnswer += 1
+                            }
+                            viewModel.checkColor()
+                            viewModel.color4 = viewModel.color
+                            viewModel.color2 = false
+                            viewModel.color3 = false
+                            viewModel.color1 = false
+                        }
+                    }
+
                 }
             }
         }

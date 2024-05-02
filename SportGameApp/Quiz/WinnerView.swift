@@ -19,7 +19,7 @@ struct WinnerView: View {
                 .ignoresSafeArea()
             VStack{
                 Spacer()
-                Text("10/10")
+                Text("\(viewModel.goodAnswer)/10")
                     .font(.system(size: 27,weight: .bold))
                 Text(viewModel.win ? "YOU WIN" : "YOU LOSE")
                     .font(.system(size: 35,weight: .bold))

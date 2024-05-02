@@ -18,9 +18,15 @@ final class ViewModel: ObservableObject {
     @Published var questionIndex = 0
     @Published var goodAnswer = 0
     @Published var win = true
-    @Published var choisOn = true
+    @Published var choisOn = false
     
     @Published var fotoQuiz = FotoQuiz.getFotoQuiz()
+    @Published var color = false
+    @Published var color1 = false
+    @Published var color2 = false
+    @Published var color3 = false
+    @Published var color4 = false
+    
     
     @Published var priceBasket = 0
     @Published var error = ""
@@ -65,6 +71,13 @@ final class ViewModel: ObservableObject {
         
         saveDate()
     }
+    //MARK: - CheckColor
+    func checkColor(){
+        if !choisOn{
+            color = true
+            choisOn = true
+        }
+    }
     //MARK: - Buy
     func buy(){
         if store[0].money >= Int64(priceBasket){
@@ -78,6 +91,7 @@ final class ViewModel: ObservableObject {
             error = "Не достаточно денег"
         }
     }
+    
     // MARK: QuizVictory
     func quizVictory(){
         if goodAnswer >= quiz.count {
@@ -103,6 +117,12 @@ final class ViewModel: ObservableObject {
         win = false
         choisOn = true
         questionIndex = 0
+        choisOn = false
+        color = false
+        color1 = false
+        color2 = false
+        color3 = false
+        color4 = false
     }
     
     //MARK: - Clean property

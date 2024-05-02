@@ -46,8 +46,14 @@ struct FotoQuestionsView: View {
                             gameOver = true
                         }else {
                             viewModel.questionIndex += 1
+                            viewModel.choisOn = false
                         }
-                        viewModel.choisOn = true
+                        viewModel.choisOn = false
+                        viewModel.color = false
+                        viewModel.color1 = false
+                        viewModel.color2 = false
+                        viewModel.color3 = false
+                        viewModel.color4 = false
                     }, image: "arrow.right",cornerRadius: 40, width: 110, height: 54).font(.title)
                 }.padding(.horizontal, 30)
                 
@@ -62,6 +68,24 @@ struct FotoQuestionsView: View {
                 WinnerView(viewModel: viewModel)
             }
         }
+        .toolbar(content: {
+            ToolbarItem(placement: .topBarLeading) {
+                ToolBarMoneyView(money: Int(viewModel.store[0].money))
+            }
+            ToolbarItem(placement: .topBarTrailing) {
+                Button(action: {
+                    isPresent = true
+                }, label: {
+                    ZStack{
+                        Circle()
+                            .frame(width: 27)
+                            .foregroundStyle(.backGroundButtton)
+                        Text("i").foregroundStyle(.white)
+                    }
+                })
+            }
+            
+        })
     }
 }
 
