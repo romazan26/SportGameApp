@@ -54,7 +54,7 @@ struct QuizQuestionsView: View {
                         PassIconView(image: Image(.pacmen), number: 0)
                         Spacer()
                         StartButton(action: {
-                            if viewModel.questionIndex + 1 == viewModel.quiz.count{
+                            if viewModel.questionIndex + 1 >= viewModel.quiz.count{
                                 viewModel.quizVictory()
                                 gameOver = true
                             }

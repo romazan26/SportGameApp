@@ -29,7 +29,7 @@ struct FotoQuestionsView: View {
                         .multilineTextAlignment(.center)
                 }
                 
-                FotoQuizCellView(viewModel: viewModel, fotoQuiz: viewModel.fotoQuiz[viewModel.questionIndex])
+                FotoQuizCellView(viewModel: viewModel)
                 
                 Spacer()
                 //MARK: - Botton bar
@@ -41,11 +41,13 @@ struct FotoQuestionsView: View {
                     Spacer()
                     StartButton(action: {
                         print(viewModel.questionIndex + 1)
-                        if viewModel.questionIndex + 1 == viewModel.fotoQuiz.count{
+                        if viewModel.questionIndex + 1 >= viewModel.fotoQuiz.count{
                             viewModel.fotoQuizVictory()
+                            gameOver = true
                         }else {
                             viewModel.questionIndex += 1
                         }
+                        viewModel.choisOn = true
                     }, image: "arrow.right",cornerRadius: 40, width: 110, height: 54).font(.title)
                 }.padding(.horizontal, 30)
                 

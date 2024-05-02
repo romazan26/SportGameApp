@@ -9,10 +9,9 @@ import SwiftUI
 
 struct ButtonAnswerView: View {
 
-    var multicolor = true
     var width: CGFloat = 331
     var height: CGFloat = 80
-    var question: Answer
+    @State var question: Answer
     @ObservedObject var viewModel: ViewModel
     
     
@@ -22,19 +21,22 @@ struct ButtonAnswerView: View {
         
             ZStack {
                 RoundedRectangle(cornerRadius: 25.0)
-                    .foregroundStyle(background)
+                    .foregroundStyle( viewModel.choisOn ? Color(.backGroundButtton) : background)
 
                     Text(question.title)
                     .font(.system(size: 20, weight: .bold))
                 .foregroundStyle(.white)
             }
             .frame(width: width, height: height)
+            
             .onTapGesture {
-                if multicolor {
+                if viewModel.choisOn {
                     if  question.isTrue {
                         viewModel.goodAnswer += 1
                     }
                     background = question.isTrue ? .green : .red
+                    viewModel.choisOn = false
+                    
                 }
             }
         }
