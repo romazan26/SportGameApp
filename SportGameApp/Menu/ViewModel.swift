@@ -19,6 +19,8 @@ final class ViewModel: ObservableObject {
     @Published var goodAnswer = 0
     @Published var win = true
     
+    @Published var fotoQuiz = FotoQuiz.getFotoQuiz()
+    
     @Published var priceBasket = 0
     @Published var error = ""
     
@@ -83,7 +85,14 @@ final class ViewModel: ObservableObject {
             win = false
         }
     }
-    
+    // MARK: FotoQuizVictory
+    func fotoQuizVictory(){
+        if goodAnswer == fotoQuiz.count {
+            win = true
+        } else {
+            win = false
+        }
+    }
     
     //MARK: - Win
     func win(money: Int){
@@ -91,6 +100,7 @@ final class ViewModel: ObservableObject {
         saveDate()
         goodAnswer = 0
         win = false
+        questionIndex = 1
     }
     
     //MARK: - Clean property

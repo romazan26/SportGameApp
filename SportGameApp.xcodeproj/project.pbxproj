@@ -17,6 +17,10 @@
 		305A34052BDEE9F500E364B4 /* ButtonAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305A34042BDEE9F500E364B4 /* ButtonAnswerView.swift */; };
 		3069A4342BE2D61D007EC393 /* WinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3069A4332BE2D61D007EC393 /* WinnerView.swift */; };
 		3069A4362BE2DA35007EC393 /* Tempdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3069A4352BE2DA35007EC393 /* Tempdata.swift */; };
+		3069A4382BE3B085007EC393 /* FotoQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3069A4372BE3B085007EC393 /* FotoQuiz.swift */; };
+		308066442BE3B75E00B4437A /* FotoQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308066432BE3B75E00B4437A /* FotoQuizView.swift */; };
+		308066462BE3C14700B4437A /* FotoQuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308066452BE3C14700B4437A /* FotoQuestionsView.swift */; };
+		308066482BE3C1AD00B4437A /* FotoQuizCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308066472BE3C1AD00B4437A /* FotoQuizCellView.swift */; };
 		308C42212BDA2D7800518B3B /* GamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C42202BDA2D7800518B3B /* GamesView.swift */; };
 		308C42242BDA36E700518B3B /* BonusGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C42232BDA36E700518B3B /* BonusGameView.swift */; };
 		30AF4FB42BE17A090048D6EB /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AF4FB32BE17A090048D6EB /* BlurView.swift */; };
@@ -46,6 +50,10 @@
 		305A34042BDEE9F500E364B4 /* ButtonAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAnswerView.swift; sourceTree = "<group>"; };
 		3069A4332BE2D61D007EC393 /* WinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerView.swift; sourceTree = "<group>"; };
 		3069A4352BE2DA35007EC393 /* Tempdata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tempdata.swift; sourceTree = "<group>"; };
+		3069A4372BE3B085007EC393 /* FotoQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FotoQuiz.swift; sourceTree = "<group>"; };
+		308066432BE3B75E00B4437A /* FotoQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FotoQuizView.swift; sourceTree = "<group>"; };
+		308066452BE3C14700B4437A /* FotoQuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FotoQuestionsView.swift; sourceTree = "<group>"; };
+		308066472BE3C1AD00B4437A /* FotoQuizCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FotoQuizCellView.swift; sourceTree = "<group>"; };
 		308C42202BDA2D7800518B3B /* GamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesView.swift; sourceTree = "<group>"; };
 		308C42232BDA36E700518B3B /* BonusGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusGameView.swift; sourceTree = "<group>"; };
 		30AF4FB32BE17A090048D6EB /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
@@ -89,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				305A33FB2BDECE9600E364B4 /* Quiz.swift */,
+				3069A4372BE3B085007EC393 /* FotoQuiz.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -102,6 +111,16 @@
 				3069A4332BE2D61D007EC393 /* WinnerView.swift */,
 			);
 			path = Quiz;
+			sourceTree = "<group>";
+		};
+		308066422BE3B74900B4437A /* FotoQuiz */ = {
+			isa = PBXGroup;
+			children = (
+				308066432BE3B75E00B4437A /* FotoQuizView.swift */,
+				308066452BE3C14700B4437A /* FotoQuestionsView.swift */,
+				308066472BE3C1AD00B4437A /* FotoQuizCellView.swift */,
+			);
+			path = FotoQuiz;
 			sourceTree = "<group>";
 		};
 		308C421F2BDA2D5D00518B3B /* Games */ = {
@@ -140,6 +159,7 @@
 		30CE2AA22BD82E310011811A /* SportGameApp */ = {
 			isa = PBXGroup;
 			children = (
+				308066422BE3B74900B4437A /* FotoQuiz */,
 				30E637512BE026840017A238 /* Shop */,
 				30CE2AB42BD82F460011811A /* Extention */,
 				305A33FD2BDED0C100E364B4 /* Quiz */,
@@ -272,13 +292,16 @@
 				30E637492BDFE2B00017A238 /* PassIconView.swift in Sources */,
 				305A33FC2BDECE9600E364B4 /* Quiz.swift in Sources */,
 				305A33D52BDBDD9700E364B4 /* YourPrizeView.swift in Sources */,
+				308066482BE3C1AD00B4437A /* FotoQuizCellView.swift in Sources */,
 				305A33FF2BDED0DB00E364B4 /* QuizView.swift in Sources */,
 				308C42212BDA2D7800518B3B /* GamesView.swift in Sources */,
 				308C42242BDA36E700518B3B /* BonusGameView.swift in Sources */,
 				30AF4FB42BE17A090048D6EB /* BlurView.swift in Sources */,
+				3069A4382BE3B085007EC393 /* FotoQuiz.swift in Sources */,
 				302D2E682BD98AD60046B86F /* MenuView.swift in Sources */,
 				305A34052BDEE9F500E364B4 /* ButtonAnswerView.swift in Sources */,
 				30E6374B2BE016550017A238 /* ViewModel.swift in Sources */,
+				308066462BE3C14700B4437A /* FotoQuestionsView.swift in Sources */,
 				30F714402BDADCF1000E4449 /* ToolBarMoneyView.swift in Sources */,
 				30E6374E2BE016BF0017A238 /* Shop.xcdatamodeld in Sources */,
 				30CE2AB62BD82F610011811A /* ProgressBarView.swift in Sources */,
@@ -291,6 +314,7 @@
 				305A34012BDED33A00E364B4 /* BluButtonView.swift in Sources */,
 				30E637532BE026990017A238 /* ShopView.swift in Sources */,
 				30CE2AB32BD82E940011811A /* LoadingView.swift in Sources */,
+				308066442BE3B75E00B4437A /* FotoQuizView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

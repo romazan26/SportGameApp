@@ -20,8 +20,13 @@ struct GamesView: View {
                 NavigationLink {
                     QuizView(viewModel: viewModel)
                 } label: {ButtonMenu(text: "QUIZ")}.padding(.top, 40)
+                
+                //MARK: - FotoQuiz
+                NavigationLink {
+                    FotoQuizView(viewModel: viewModel)
+                } label: {ButtonMenu(text: "PHOTO GUESS")}
 
-                ButtonMenu(text: "PHOTO GUESS")
+               
                 ButtonMenu(text: "TRUE/FALSE")
                 Spacer()
                 NavigationLink {

@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct ButtonAnswerView: View {
-    var text = ""
-    var icon = ""
+
     var multicolor = true
-    var answer = false
+    var width: CGFloat = 331
+    var height: CGFloat = 80
     var question: Answer
     @ObservedObject var viewModel: ViewModel
     
@@ -28,7 +28,7 @@ struct ButtonAnswerView: View {
                     .font(.system(size: 20, weight: .bold))
                 .foregroundStyle(.white)
             }
-            .frame(width: 331, height: 80)
+            .frame(width: width, height: height)
             .onTapGesture {
                 if multicolor {
                     if  question.isTrue {

@@ -21,7 +21,7 @@ struct BluButtonView: View {
                     .foregroundStyle(.white)
                 Text(text)
                     .foregroundStyle(.white)
-                    .font(.system( size: 14, weight: .bold))
+                    .font(.system( size: 20, weight: .bold))
                     
             }
         }
