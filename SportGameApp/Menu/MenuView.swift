@@ -22,17 +22,19 @@ struct MenuView: View {
                     .padding(.top, 345)
                     .padding(.leading,197)
                 VStack {
+                    //MARK: - Title
                     Text("MENU")
                         .foregroundStyle(.white)
                         .font(.system(size: 41,weight: .bold))
                         .padding(.top, 160)
+                    
+                    //MARK: - Games button
                     NavigationLink {
                         GamesView(viewModel: viewModel)
-                    } label: {
-                        ButtonMenu(text: "GAMES", icon: "gamecontroller.fill")
-                    }
+                    } label: {ButtonMenu(text: "GAMES", icon: "gamecontroller.fill")}
                     .padding(.top, 40)
                     
+                    //MARK: - Bonus Game button
                     NavigationLink {
                         BonusGameView()
                     } label: {
@@ -45,11 +47,12 @@ struct MenuView: View {
                                     .foregroundStyle(.white)
                                 Text("BONUS GAME")
                                     .foregroundStyle(.white)
-                                   // .font(.title2)
                                     .font(.system( size: 34, weight: .bold))
                             }
                         }
                     }
+                    
+                    //MARK: - Shop button
                     NavigationLink {
                         ShopView(viewModel: viewModel)
                     } label: {
@@ -58,8 +61,15 @@ struct MenuView: View {
                     
                     Spacer()
                     
-                    ButtonMenu(text: "SETTINGS", icon: "gear")
-                        .padding(.bottom, 55)
+                    //MARK: - Setting button
+                    NavigationLink {
+                        SettingsView()
+                    } label: {
+                        ButtonMenu(text: "SETTINGS", icon: "gear")
+                            .padding(.bottom, 55)
+                    }
+
+                    
                     
                 }
                 
