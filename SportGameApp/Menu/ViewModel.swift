@@ -27,6 +27,8 @@ final class ViewModel: ObservableObject {
     @Published var color3 = false
     @Published var color4 = false
     
+    @Published var trueFalseGame = TrueFalse.getTrueFalseGame()
+    
     
     @Published var priceBasket = 0
     @Published var error = ""

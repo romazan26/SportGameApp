@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		302D2E682BD98AD60046B86F /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302D2E672BD98AD60046B86F /* MenuView.swift */; };
 		302D2E6A2BD98C1C0046B86F /* ButtonMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302D2E692BD98C1C0046B86F /* ButtonMenu.swift */; };
+		3041B6DC2BE4B54C00D828A6 /* TrueFalseGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3041B6DB2BE4B54C00D828A6 /* TrueFalseGameView.swift */; };
+		3041B6DE2BE4B66100D828A6 /* TrueFalseGameAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3041B6DD2BE4B66100D828A6 /* TrueFalseGameAnswerView.swift */; };
+		3041B6E02BE4B74100D828A6 /* TrueFalse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3041B6DF2BE4B74100D828A6 /* TrueFalse.swift */; };
+		3041B6E22BE4BB6900D828A6 /* TrueFalseCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3041B6E12BE4BB6900D828A6 /* TrueFalseCellView.swift */; };
+		3041B6E42BE4BC7C00D828A6 /* ButtonTrueFalseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3041B6E32BE4BC7C00D828A6 /* ButtonTrueFalseView.swift */; };
 		305A33D52BDBDD9700E364B4 /* YourPrizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305A33D42BDBDD9700E364B4 /* YourPrizeView.swift */; };
 		305A33FC2BDECE9600E364B4 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305A33FB2BDECE9600E364B4 /* Quiz.swift */; };
 		305A33FF2BDED0DB00E364B4 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305A33FE2BDED0DB00E364B4 /* QuizView.swift */; };
@@ -42,6 +47,11 @@
 /* Begin PBXFileReference section */
 		302D2E672BD98AD60046B86F /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		302D2E692BD98C1C0046B86F /* ButtonMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonMenu.swift; sourceTree = "<group>"; };
+		3041B6DB2BE4B54C00D828A6 /* TrueFalseGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrueFalseGameView.swift; sourceTree = "<group>"; };
+		3041B6DD2BE4B66100D828A6 /* TrueFalseGameAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrueFalseGameAnswerView.swift; sourceTree = "<group>"; };
+		3041B6DF2BE4B74100D828A6 /* TrueFalse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrueFalse.swift; sourceTree = "<group>"; };
+		3041B6E12BE4BB6900D828A6 /* TrueFalseCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrueFalseCellView.swift; sourceTree = "<group>"; };
+		3041B6E32BE4BC7C00D828A6 /* ButtonTrueFalseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTrueFalseView.swift; sourceTree = "<group>"; };
 		305A33D42BDBDD9700E364B4 /* YourPrizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourPrizeView.swift; sourceTree = "<group>"; };
 		305A33FB2BDECE9600E364B4 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		305A33FE2BDED0DB00E364B4 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
@@ -93,11 +103,23 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
+		3041B6DA2BE4B52E00D828A6 /* TrueFalseGame */ = {
+			isa = PBXGroup;
+			children = (
+				3041B6DB2BE4B54C00D828A6 /* TrueFalseGameView.swift */,
+				3041B6DD2BE4B66100D828A6 /* TrueFalseGameAnswerView.swift */,
+				3041B6E12BE4BB6900D828A6 /* TrueFalseCellView.swift */,
+				3041B6E32BE4BC7C00D828A6 /* ButtonTrueFalseView.swift */,
+			);
+			path = TrueFalseGame;
+			sourceTree = "<group>";
+		};
 		305A33FA2BDECE5F00E364B4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				305A33FB2BDECE9600E364B4 /* Quiz.swift */,
 				3069A4372BE3B085007EC393 /* FotoQuiz.swift */,
+				3041B6DF2BE4B74100D828A6 /* TrueFalse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -159,8 +181,9 @@
 		30CE2AA22BD82E310011811A /* SportGameApp */ = {
 			isa = PBXGroup;
 			children = (
-				308066422BE3B74900B4437A /* FotoQuiz */,
 				30E637512BE026840017A238 /* Shop */,
+				3041B6DA2BE4B52E00D828A6 /* TrueFalseGame */,
+				308066422BE3B74900B4437A /* FotoQuiz */,
 				30CE2AB42BD82F460011811A /* Extention */,
 				305A33FD2BDED0C100E364B4 /* Quiz */,
 				308C42222BDA36CB00518B3B /* BonusGame */,
@@ -299,6 +322,7 @@
 				30AF4FB42BE17A090048D6EB /* BlurView.swift in Sources */,
 				3069A4382BE3B085007EC393 /* FotoQuiz.swift in Sources */,
 				302D2E682BD98AD60046B86F /* MenuView.swift in Sources */,
+				3041B6E02BE4B74100D828A6 /* TrueFalse.swift in Sources */,
 				305A34052BDEE9F500E364B4 /* ButtonAnswerView.swift in Sources */,
 				30E6374B2BE016550017A238 /* ViewModel.swift in Sources */,
 				308066462BE3C14700B4437A /* FotoQuestionsView.swift in Sources */,
@@ -307,14 +331,18 @@
 				30CE2AB62BD82F610011811A /* ProgressBarView.swift in Sources */,
 				30AF4FB62BE17A7A0048D6EB /* InfoPassView.swift in Sources */,
 				30CE2AB82BD83A820011811A /* StartButton.swift in Sources */,
+				3041B6DE2BE4B66100D828A6 /* TrueFalseGameAnswerView.swift in Sources */,
 				3069A4362BE2DA35007EC393 /* Tempdata.swift in Sources */,
 				305A34032BDED7B100E364B4 /* QuizQuestionsView.swift in Sources */,
+				3041B6E22BE4BB6900D828A6 /* TrueFalseCellView.swift in Sources */,
 				3069A4342BE2D61D007EC393 /* WinnerView.swift in Sources */,
 				30CE2AA42BD82E310011811A /* SportGameAppApp.swift in Sources */,
 				305A34012BDED33A00E364B4 /* BluButtonView.swift in Sources */,
+				3041B6DC2BE4B54C00D828A6 /* TrueFalseGameView.swift in Sources */,
 				30E637532BE026990017A238 /* ShopView.swift in Sources */,
 				30CE2AB32BD82E940011811A /* LoadingView.swift in Sources */,
 				308066442BE3B75E00B4437A /* FotoQuizView.swift in Sources */,
+				3041B6E42BE4BC7C00D828A6 /* ButtonTrueFalseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

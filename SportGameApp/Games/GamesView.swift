@@ -26,8 +26,12 @@ struct GamesView: View {
                     FotoQuizView(viewModel: viewModel)
                 } label: {ButtonMenu(text: "PHOTO GUESS")}
 
-               
-                ButtonMenu(text: "TRUE/FALSE")
+               //MARK: - TrueFalseGame
+                NavigationLink {
+                    TrueFalseGameView(viewModel: viewModel)
+                } label: {ButtonMenu(text: "TRUE/FALSE")}
+
+                
                 Spacer()
                 NavigationLink {
                     //destination
