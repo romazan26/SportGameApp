@@ -58,8 +58,12 @@ struct GamesView: View {
         .ignoresSafeArea()
         .toolbar(content: {
             ToolbarItem {
-                Image(systemName: "gearshape")
-                    .foregroundStyle(.white)
+                NavigationLink {
+                    SettingsView()
+                } label: {
+                    Image(systemName: "gearshape")
+                        .foregroundStyle(.white)
+                }
             }
         })
         

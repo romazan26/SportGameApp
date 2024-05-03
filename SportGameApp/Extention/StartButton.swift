@@ -31,7 +31,7 @@ struct StartButton: View {
                     }
                     Text(text)
                         .foregroundStyle(.white)
-                        .font(.system( size: 20, weight: .bold))
+                        .font(.system( size: 26, weight: .bold))
                 }
             }
         })

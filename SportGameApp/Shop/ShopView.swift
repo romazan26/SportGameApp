@@ -149,11 +149,9 @@ struct ShopView: View {
             }
             ToolbarItem(placement: .topBarTrailing) {
                 NavigationLink {
-                    //destenation
+                    SettingsView()
                 } label: {
-                    Image(systemName: "gearshape.fill")
-                        .resizable()
-                        .frame(width: 27,height: 27)
+                    Image(systemName: "gearshape")
                         .foregroundStyle(.white)
                 }
                 

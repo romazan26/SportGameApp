@@ -9,7 +9,16 @@ import SwiftUI
 
 struct TimerSpinView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack(alignment: .center) {
+            Color(.backGroundButtton)
+                .opacity(0.8)
+                .ignoresSafeArea()
+            VStack{
+                Text("Not yet").font(.system(size: 16))
+                Text("23:59:52")
+                    .font(.system(size: 35, weight: .bold))
+            }.foregroundStyle(.white)
+        }
     }
 }
 

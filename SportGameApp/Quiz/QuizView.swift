@@ -23,8 +23,12 @@ struct QuizView: View {
         })
         .toolbar(content: {
             ToolbarItem {
-                Image(systemName: "gearshape")
-                    .foregroundStyle(.white)
+                NavigationLink {
+                    SettingsView()
+                } label: {
+                    Image(systemName: "gearshape")
+                        .foregroundStyle(.white)
+                }
             }
         })
         .background(Image(.quiz)

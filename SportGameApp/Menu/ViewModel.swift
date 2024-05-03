@@ -79,6 +79,7 @@ final class ViewModel: ObservableObject {
         newStore.lighting = 0
         newStore.money = 0
         newStore.pacmen = 0
+        newStore.spin = 0
         
         saveDate()
     }
@@ -226,6 +227,27 @@ final class ViewModel: ObservableObject {
             bonus = Image(.pacman4)
         }
         
-        print(degrees)
+    }
+    
+    func collctBonus(){
+        switch bonus{
+        case Image(.energy1): store[0].lighting += 1
+        case Image(.energy2): store[0].lighting += 2
+        case Image(.energy4): store[0].lighting += 4
+        case Image(.pacman1): store[0].pacmen += 1
+        case Image(.pacman2): store[0].pacmen += 2
+        case Image(.pacman3): store[0].pacmen += 3
+        case Image(.pacman4): store[0].pacmen += 4
+        default:
+            break
+        }
+        saveDate()
+    }
+    func buySpin(){
+        if store[0].money > 99 {
+            store[0].money -= 100
+            store[0].spin += 1
+        }
+        saveDate()
     }
 }

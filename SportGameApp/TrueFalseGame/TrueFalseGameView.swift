@@ -40,9 +40,12 @@ struct TrueFalseGameView: View {
         .foregroundStyle(.white)
         .padding()
         .toolbar(content: {
-            ToolbarItem {
+            NavigationLink {
+                SettingsView()
+            } label: {
                 Image(systemName: "gearshape")
                     .foregroundStyle(.white)
+            
             }
         })
         .background(

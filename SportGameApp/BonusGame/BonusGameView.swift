@@ -11,6 +11,7 @@ struct BonusGameView: View {
     @ObservedObject var viewModel: ViewModel
     @State private var degrees: Double = 0
     @State private var isPresent = false
+    
     var body: some View {
         ZStack{
             Color(.backGround)
@@ -25,13 +26,16 @@ struct BonusGameView: View {
                 ZStack {
                     Image(.whels)
                         .resizable()
-                        .frame(width: 400, height: 400)
+                        .frame(width: 380, height: 380)
                     Image(.arow)
                         .resizable()
                         .frame(width: 70, height: 56)
                         .padding(.leading, -20)
-                        .rotationEffect(Angle(degrees: 90))
+                        .rotationEffect(Angle(degrees: 68))
                         .rotationEffect(Angle(degrees: viewModel.degrees), anchor: .center)
+                    if viewModel.store[0].spin < 1 {
+                        TimerSpinView()
+                    }
                 }
                 
                 ZStack{
@@ -39,7 +43,7 @@ struct BonusGameView: View {
                         .frame(width: 108, height: 43)
                         .foregroundStyle(.backGroundButtton)
                     
-                    Text("SPIN: 1")
+                    Text("SPIN: \(viewModel.store[0].spin)")
                         .foregroundStyle(.white)
                         .padding()
                 }
@@ -47,17 +51,24 @@ struct BonusGameView: View {
                 Spacer()
                 
                 //MARK: - Spin Button
-                StartButton(action: {
-                    viewModel.findBonus()
-                    Timer.scheduledTimer(withTimeInterval: 2.5, repeats: false) { Timer in
-                        isPresent = true
-                    }
-                        
-                    
-                    
-                }, text: "SPIN",cornerRadius: 48.0)
+                if viewModel.store[0].spin > 0 {
+                    StartButton(action: {
+                        viewModel.findBonus()
+                        Timer.scheduledTimer(withTimeInterval: 2.5, repeats: false) { Timer in
+                            isPresent = true
+                            viewModel.store[0].spin -= 1
+                            viewModel.saveDate()
+                        }
+                    }, text: "SPIN",cornerRadius: 48.0)
                     .padding(.bottom, 40)
                     .shadow(color: .blue, radius: 21)
+                } else {
+                    StartButton(action: {
+                        viewModel.buySpin()
+                    }, text: "100",cornerRadius: 48.0, money: true)
+                    .padding(.bottom, 40)
+                    .shadow(color: .blue, radius: 21)
+                }
             }.padding()
         }
         .fullScreenCover(isPresented: $isPresent, content: {
@@ -68,13 +79,15 @@ struct BonusGameView: View {
         //MARK: - ToolBar
         .toolbar(content: {
             ToolbarItem(placement: .topBarLeading){
-                ToolBarMoneyView().padding(.leading, 40)
+                ToolBarMoneyView(money: Int(viewModel.store[0].money)).padding(.leading, 40)
             }
-            ToolbarItem(placement: .topBarTrailing) {
-                Image(systemName: "gearshape.fill")
-                    .resizable()
-                    .frame(width: 27,height: 27)
-                    .foregroundStyle(.white)
+            ToolbarItem {
+                NavigationLink {
+                    SettingsView()
+                } label: {
+                    Image(systemName: "gearshape")
+                        .foregroundStyle(.white)
+                }
             }
         })
         

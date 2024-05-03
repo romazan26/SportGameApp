@@ -19,15 +19,14 @@ struct YourPrizeView: View {
                 Text("YOUR PRIZE")
                     .foregroundStyle(.white)
                     .font(.system(size: 41,weight: .bold))
-                   
-                    .padding(.top, 30)
+                    .padding(.top, 50)
                     .minimumScaleFactor(0.8)
                 ZStack {
                     Image(.prizeBackground)
                         .resizable()
                         .opacity(0.8)
                         .shadow(color: .backGround, radius: 10)
-                       // .frame(width: 400, height: 400)
+                        .frame(width: 350, height: 350)
                     Circle()
                         .stroke(lineWidth: 40)
                         .foregroundStyle(.backGround)
@@ -42,9 +41,10 @@ struct YourPrizeView: View {
                     .font(.caption)
                 StartButton(action: {
                     viewModel.degrees = 0
+                    viewModel.collctBonus()
                     dismiss()
                 }, text: "COLLECT")
-                .padding(.bottom, 50)
+                .padding(.bottom, 80)
             }
         }
     }
