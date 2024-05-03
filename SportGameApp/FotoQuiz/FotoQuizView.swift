@@ -33,6 +33,9 @@ struct FotoQuizView: View {
             }.padding()
 
         }
+        .onAppear(perform: {
+            viewModel.questionIndex = 0
+        })
         .foregroundStyle(.white)
         .padding()
         .toolbar(content: {

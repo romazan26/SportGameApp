@@ -17,8 +17,10 @@ struct QuizView: View {
             } label: {
                 BluButtonView(text: "START")
             }.padding()
-
         }
+        .onAppear(perform: {
+            viewModel.questionIndex = 0
+        })
         .toolbar(content: {
             ToolbarItem {
                 Image(systemName: "gearshape")

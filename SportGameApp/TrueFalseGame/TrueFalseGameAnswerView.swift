@@ -38,7 +38,9 @@ struct TrueFalseGameAnswerView: View {
                 HStack(spacing: 20){
                    
                     Button(action: {
-                        viewModel.deleteOneTF()
+                        if viewModel.store[0].pacmen > 0{
+                            viewModel.deleteOneTF()
+                        }
                     }, label: {
                         PassIconView(image: Image(.pacmen), number: Int(viewModel.store[0].pacmen))
                     })

@@ -34,26 +34,42 @@ struct FotoQuestionsView: View {
                 Spacer()
                 //MARK: - Botton bar
                 HStack(spacing: 20){
+                    //MARK: - Lighting
+                    Button(action: {
+                        if viewModel.store[0].lighting > 0{
+                            viewModel.deleteOneFoto()
+                            viewModel.deleteOneFoto()
+                            viewModel.store[0].lighting -= 1
+                            viewModel.saveDate()
+                        }
+                    }, label: {
+                        PassIconView(image: Image(.lighting), number: Int(viewModel.store[0].lighting))
+                    })
                     
-                    PassIconView(image: Image(.lighting), number: Int(viewModel.store[0].lighting))
+                    //MARK: - Pacmen
+                    Button(action: {
+                        if viewModel.store[0].pacmen > 0{
+                            viewModel.deleteOneFoto()
+                            viewModel.store[0].pacmen -= 1
+                            viewModel.saveDate()
+                        }
+                    }, label: {
+                        PassIconView(image: Image(.pacmen), number: Int(viewModel.store[0].pacmen))
+                    })
                     
-                    PassIconView(image: Image(.pacmen), number: Int(viewModel.store[0].pacmen))
+                    
+                    
                     Spacer()
                     StartButton(action: {
-                        print(viewModel.questionIndex + 1)
+                        
                         if viewModel.questionIndex + 1 >= viewModel.fotoQuiz.count{
                             viewModel.fotoQuizVictory()
                             gameOver = true
                         }else {
                             viewModel.questionIndex += 1
-                            viewModel.choisOn = false
                         }
-                        viewModel.choisOn = false
-                        viewModel.color = false
-                        viewModel.color1 = false
-                        viewModel.color2 = false
-                        viewModel.color3 = false
-                        viewModel.color4 = false
+
+                        viewModel.nextLevel()
                     }, image: "arrow.right",cornerRadius: 40, width: 110, height: 54).font(.title)
                 }.padding(.horizontal)
                 

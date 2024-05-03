@@ -11,19 +11,26 @@ struct ButtonAnswerView: View {
 
     var width: CGFloat = 331
     var height: CGFloat = 80
-    var question: Answer
+    var answer: Answer
     var color = false
+    var delete = false
   
     
     
     var body: some View {
             ZStack {
                 RoundedRectangle(cornerRadius: 25.0)
-                    .foregroundStyle(color ? question.isTrue ? .green : .red : .backGroundButtton)
-
-                    Text(question.title)
-                    .font(.system(size: 20, weight: .bold))
-                .foregroundStyle(.white)
+                    .foregroundStyle(color ? answer.isTrue ? .green : .red : .backGroundButtton)
+                if delete && !answer.isTrue {
+                    Text(answer.title)
+                        .font(.system(size: 20, weight: .bold))
+                        .foregroundStyle(.gray)
+                    //.strikethrough(true, color: .red)
+                }else{
+                    Text(answer.title)
+                        .font(.system(size: 20, weight: .bold))
+                        .foregroundStyle(.white)
+                }
             }
             
             .frame(width: width, height: height)
@@ -34,5 +41,5 @@ struct ButtonAnswerView: View {
 }
 
 #Preview {
-    ButtonAnswerView(question: QuizQuestion.getQuizQuestions()[0].answer[0])
+    ButtonAnswerView(answer: QuizQuestion.getQuizQuestions()[0].answer[0])
 }

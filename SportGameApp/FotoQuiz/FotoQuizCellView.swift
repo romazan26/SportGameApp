@@ -20,8 +20,8 @@ struct FotoQuizCellView: View {
                 VStack(spacing: 10){
                     ButtonAnswerView(width: 159,
                                      height: 80,
-                                     question: viewModel.fotoQuiz[viewModel.questionIndex].answer[0],
-                                     color: viewModel.color1)
+                                     answer: viewModel.fotoQuiz[viewModel.questionIndex].answer[0],
+                                     color: viewModel.color1,delete: viewModel.isDelete1)
                     .onTapGesture {
                         if !viewModel.choisOn{
                             if viewModel.fotoQuiz[viewModel.questionIndex].answer[0].isTrue{
@@ -36,8 +36,8 @@ struct FotoQuizCellView: View {
                     }
                     ButtonAnswerView(width: 159,
                                      height: 80,
-                                     question: viewModel.fotoQuiz[viewModel.questionIndex].answer[2],
-                                     color: viewModel.color2)
+                                     answer: viewModel.fotoQuiz[viewModel.questionIndex].answer[2],
+                                     color: viewModel.color2,delete: viewModel.isDelete3)
                     .onTapGesture {
                         if !viewModel.choisOn{
                             if viewModel.fotoQuiz[viewModel.questionIndex].answer[2].isTrue{
@@ -54,8 +54,8 @@ struct FotoQuizCellView: View {
                 VStack(spacing: 10){
                     ButtonAnswerView(width: 159,
                                      height: 80,
-                                     question: viewModel.fotoQuiz[viewModel.questionIndex].answer[1],
-                                     color: viewModel.color3)
+                                     answer: viewModel.fotoQuiz[viewModel.questionIndex].answer[1],
+                                     color: viewModel.color3,delete: viewModel.isDelete2)
                     .onTapGesture {
                         if !viewModel.choisOn{
                             if viewModel.fotoQuiz[viewModel.questionIndex].answer[1].isTrue{
@@ -71,8 +71,8 @@ struct FotoQuizCellView: View {
 
                     ButtonAnswerView(width: 159,
                                      height: 80,
-                                     question: viewModel.fotoQuiz[viewModel.questionIndex].answer[3],
-                                     color: viewModel.color4)
+                                     answer: viewModel.fotoQuiz[viewModel.questionIndex].answer[3],
+                                     color: viewModel.color4,delete: viewModel.isDelete4)
                     .onTapGesture {
                         if !viewModel.choisOn{
                             if viewModel.fotoQuiz[viewModel.questionIndex].answer[3].isTrue{

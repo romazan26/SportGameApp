@@ -119,16 +119,11 @@ final class ViewModel: ObservableObject {
     func win(money: Int){
         store[0].money += Int64(money)
         saveDate()
+        nextLevel()
         goodAnswer = 0
         win = false
-        choisOn = true
         questionIndex = 0
-        choisOn = false
-        color = false
-        color1 = false
-        color2 = false
-        color3 = false
-        color4 = false
+        
     }
     
     //MARK: - Clean property
@@ -146,22 +141,55 @@ final class ViewModel: ObservableObject {
             isDelete2 = true
         }
         store[0].pacmen -= 1
+        saveDate()
     }
     
     func deleteOneQuiz(){
-        var index = 1
+        var index = 0
         for answer in quiz[questionIndex].answer {
+            index += 1
             if !answer.isTrue {
-                switch index {
-                    
-                case 1: isDelete1 = true
-                case 2: isDelete2 = true
-                case 3: isDelete3 = true
-                default:
+                if index == 1 && !isDelete1 {
+                    isDelete1 = true
+                    index = 5
+                }
+                if index == 2 && !isDelete2{
+                    isDelete2 = true
+                    index = 5
+                }
+                if index == 3 && !isDelete3{
+                    isDelete3 = true
+                    index = 5
+                }
+                if index == 4 && !isDelete4{
                     isDelete4 = true
+                    index = 5
                 }
             }
+        }
+    }
+    func deleteOneFoto(){
+        var index = 0
+        for answer in fotoQuiz[questionIndex].answer {
             index += 1
+            if !answer.isTrue {
+                if index == 1 && !isDelete1 {
+                    isDelete1 = true
+                    index = 5
+                }
+                if index == 2 && !isDelete2{
+                    isDelete2 = true
+                    index = 5
+                }
+                if index == 3 && !isDelete3{
+                    isDelete3 = true
+                    index = 5
+                }
+                if index == 4 && !isDelete4{
+                    isDelete4 = true
+                    index = 5
+                }
+            }
         }
     }
     //MARK: - Next Level
@@ -174,5 +202,7 @@ final class ViewModel: ObservableObject {
         color4 = false
         isDelete1 = false
         isDelete2 = false
+        isDelete3 = false
+        isDelete4 = false
     }
 }
