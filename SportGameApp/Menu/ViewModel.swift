@@ -10,6 +10,8 @@ import Foundation
 import SwiftUI
 
 final class ViewModel: ObservableObject {
+    
+    //MARK: - Propertys
     @Published var store: [Store]!
     
     @Published var simpleLighting = 0
@@ -36,6 +38,9 @@ final class ViewModel: ObservableObject {
     
     @Published var priceBasket = 0
     @Published var error = ""
+    
+    @Published var degrees: Double = 0
+    @Published var bonus = Image(.energy1)
     
     //MARK: - CoreDate
     let container = NSPersistentContainer(name: "Shop")
@@ -204,5 +209,23 @@ final class ViewModel: ObservableObject {
         isDelete2 = false
         isDelete3 = false
         isDelete4 = false
+    }
+    
+    //MARK: - BonusGame
+    func findBonus(){
+        degrees = Double.random(in: 1...360)
+        switch degrees {
+        case 0...45 :  bonus = Image(.energy1)
+        case 45...90 :   bonus = Image(.pacman2)
+        case 90...135 :  bonus = Image(.pacman1)
+        case 135...180 :  bonus = Image(.energy2)
+        case 180...225 :  bonus = Image(.energy1)
+        case 225...270 :  bonus = Image(.pacman3)
+        case 270...315 :  bonus = Image(.energy4)
+        default:
+            bonus = Image(.pacman4)
+        }
+        
+        print(degrees)
     }
 }

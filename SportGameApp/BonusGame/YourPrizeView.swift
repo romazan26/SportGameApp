@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct YourPrizeView: View {
-    
+    @ObservedObject var viewModel: ViewModel
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -33,6 +33,7 @@ struct YourPrizeView: View {
                         .foregroundStyle(.backGround)
                         .opacity(0.7)
                         .shadow(color: .backGround, radius: 70)
+                    viewModel.bonus
                         
                         
                 }.frame(width: 428, height: 428)
@@ -40,6 +41,7 @@ struct YourPrizeView: View {
                     .foregroundStyle(.white)
                     .font(.caption)
                 StartButton(action: {
+                    viewModel.degrees = 0
                     dismiss()
                 }, text: "COLLECT")
                 .padding(.bottom, 50)
@@ -49,5 +51,5 @@ struct YourPrizeView: View {
 }
 
 #Preview {
-    YourPrizeView()
+    YourPrizeView(viewModel: ViewModel())
 }

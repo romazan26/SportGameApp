@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct BonusGameView: View {
+    @ObservedObject var viewModel: ViewModel
     @State private var degrees: Double = 0
     @State private var isPresent = false
     var body: some View {
@@ -29,7 +30,8 @@ struct BonusGameView: View {
                         .resizable()
                         .frame(width: 70, height: 56)
                         .padding(.leading, -20)
-                        .rotationEffect(Angle(degrees: degrees), anchor: .center)
+                        .rotationEffect(Angle(degrees: 90))
+                        .rotationEffect(Angle(degrees: viewModel.degrees), anchor: .center)
                 }
                 
                 ZStack{
@@ -46,18 +48,22 @@ struct BonusGameView: View {
                 
                 //MARK: - Spin Button
                 StartButton(action: {
-                    degrees = 0
-                    degrees = Double.random(in: 1...1440)
-                    isPresent = true
+                    viewModel.findBonus()
+                    Timer.scheduledTimer(withTimeInterval: 2.5, repeats: false) { Timer in
+                        isPresent = true
+                    }
+                        
+                    
+                    
                 }, text: "SPIN",cornerRadius: 48.0)
                     .padding(.bottom, 40)
                     .shadow(color: .blue, radius: 21)
             }.padding()
         }
         .fullScreenCover(isPresented: $isPresent, content: {
-            YourPrizeView()
+            YourPrizeView(viewModel: viewModel)
         })
-        .animation(.easeInOut(duration: 2), value: degrees)
+        .animation(.easeInOut(duration: 2), value: viewModel.degrees)
         
         //MARK: - ToolBar
         .toolbar(content: {
@@ -76,5 +82,5 @@ struct BonusGameView: View {
 }
 
 #Preview {
-    BonusGameView()
+    BonusGameView(viewModel: ViewModel())
 }

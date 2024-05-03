@@ -34,7 +34,7 @@ struct GamesView: View {
                 
                 Spacer()
                 NavigationLink {
-                    //destination
+                    BonusGameView(viewModel: viewModel)
                 } label: {
                     BluButtonView(text: "BONUS GAME", image: "star.fill")
                 }

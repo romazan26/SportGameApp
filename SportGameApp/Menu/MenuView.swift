@@ -36,7 +36,7 @@ struct MenuView: View {
                     
                     //MARK: - Bonus Game button
                     NavigationLink {
-                        BonusGameView()
+                        BonusGameView(viewModel: viewModel)
                     } label: {
                         ZStack{
                             RoundedRectangle(cornerRadius: 25.0)
