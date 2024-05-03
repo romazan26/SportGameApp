@@ -36,10 +36,10 @@ struct TrueFalseGameAnswerView: View {
                 Spacer()
                 //MARK: - Botton bar
                 HStack(spacing: 20){
-                    Spacer()
-                    PassIconView(image: Image(.lighting), number: 0)
+                   // Spacer()
                     
                     PassIconView(image: Image(.pacmen), number: 0)
+                    
                     Spacer()
                     StartButton(action: {
                         print(viewModel.questionIndex + 1)
@@ -57,7 +57,18 @@ struct TrueFalseGameAnswerView: View {
                         viewModel.color3 = false
                         viewModel.color4 = false
                     }, image: "arrow.right",cornerRadius: 40, width: 110, height: 54).font(.title)
-                }.padding()
+                }
+                .padding(.vertical)
+                .padding(.horizontal, 35)
+            }
+            if isPresent {
+                InfoPassView()
+                    .onTapGesture {
+                        isPresent = false
+                    }
+            }
+            if gameOver {
+                WinnerView(viewModel: viewModel)
             }
         }
         

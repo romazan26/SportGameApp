@@ -12,6 +12,7 @@ struct ButtonTrueFalseView: View {
     var width: CGFloat = 331
     var height: CGFloat = 80
     var answer: Bool
+    var title: String
     var color = false
     
     var body: some View {
@@ -19,7 +20,7 @@ struct ButtonTrueFalseView: View {
             RoundedRectangle(cornerRadius: 25.0)
                 .foregroundStyle(color ? answer ? .green : .red : .backGroundButtton)
 
-            Text(color ? "True" : "False")
+            Text(title)
                 .font(.system(size: 20, weight: .bold))
             .foregroundStyle(.white)
         }
@@ -29,5 +30,5 @@ struct ButtonTrueFalseView: View {
 }
 
 #Preview {
-    ButtonTrueFalseView( answer: false)
+    ButtonTrueFalseView( answer: false, title: "True")
 }

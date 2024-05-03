@@ -29,7 +29,7 @@ struct TrueFalseCellView: View {
                     ButtonTrueFalseView(width: 159,
                                         height: 80,
                                         answer: viewModel.trueFalseGame[viewModel.questionIndex].isTrue,
-                                        color: viewModel.color1)
+                                        title: "True", color: viewModel.color1)
                     .onTapGesture {
                         if !viewModel.choisOn{
                             if viewModel.trueFalseGame[viewModel.questionIndex].isTrue{
@@ -42,7 +42,8 @@ struct TrueFalseCellView: View {
                     }
                 ButtonTrueFalseView(width: 159,
                                     height: 80,
-                                    answer: viewModel.trueFalseGame[viewModel.questionIndex].isTrue,
+                                    answer: !viewModel.trueFalseGame[viewModel.questionIndex].isTrue, 
+                                    title: "False",
                                     color: viewModel.color2)
                     .onTapGesture {
                         if !viewModel.choisOn{

@@ -38,7 +38,9 @@ struct WinnerView: View {
                 StartButton(action: {
                     viewModel.win(money: viewModel.win ? 50 : 10)
                     dismiss()
-                }, text: viewModel.win ? "NEXT LEVEL" : "10", money: viewModel.win ? false : true)
+                }, text: viewModel.win ? "GO MENU" : "10", money: viewModel.win ? false : true)
+                .cornerRadius(50)
+                .shadow(color: .blue, radius: 10)
                 
             }
             .foregroundStyle(.white)

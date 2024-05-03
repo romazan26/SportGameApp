@@ -42,8 +42,8 @@ struct ShopView: View {
                     Spacer()
                     Text("Delete one object")
                         .foregroundStyle(.white)
-                        //.font(.title2)
-                        .font(.system( size: 34, weight: .bold))
+                        .font(.system( size: 30, weight: .bold))
+                        .minimumScaleFactor(0.5)
                     
                     Spacer()
                     
@@ -84,8 +84,8 @@ struct ShopView: View {
                     Spacer()
                     Text("Delete two object")
                         .foregroundStyle(.white)
-                       // .font(.title2)
-                        .font(.system( size: 34, weight: .bold))
+                        .font(.system( size: 30, weight: .bold))
+                        .minimumScaleFactor(0.5)
                     
                     Spacer()
                     
