@@ -34,10 +34,10 @@ struct FotoQuestionsView: View {
                 Spacer()
                 //MARK: - Botton bar
                 HStack(spacing: 20){
-                    Spacer()
-                    PassIconView(image: Image(.lighting), number: 0)
                     
-                    PassIconView(image: Image(.pacmen), number: 0)
+                    PassIconView(image: Image(.lighting), number: Int(viewModel.store[0].lighting))
+                    
+                    PassIconView(image: Image(.pacmen), number: Int(viewModel.store[0].pacmen))
                     Spacer()
                     StartButton(action: {
                         print(viewModel.questionIndex + 1)
@@ -55,9 +55,9 @@ struct FotoQuestionsView: View {
                         viewModel.color3 = false
                         viewModel.color4 = false
                     }, image: "arrow.right",cornerRadius: 40, width: 110, height: 54).font(.title)
-                }.padding(.horizontal, 30)
+                }.padding(.horizontal)
                 
-            }
+            }.padding()
             if isPresent {
                 InfoPassView()
                     .onTapGesture {

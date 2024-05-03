@@ -38,7 +38,7 @@ struct TrueFalseGameAnswerView: View {
                 HStack(spacing: 20){
                    // Spacer()
                     
-                    PassIconView(image: Image(.pacmen), number: 0)
+                    PassIconView(image: Image(.pacmen), number: Int(viewModel.store[0].pacmen))
                     
                     Spacer()
                     StartButton(action: {

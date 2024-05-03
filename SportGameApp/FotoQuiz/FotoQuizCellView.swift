@@ -15,7 +15,7 @@ struct FotoQuizCellView: View {
         VStack(spacing: 20) {
             Image(viewModel.fotoQuiz[viewModel.questionIndex].foto)
                 .resizable()
-                .frame(width: 331, height: 331)
+                .frame(width: 301, height: 301)
             HStack(spacing: 10){
                 VStack(spacing: 10){
                     ButtonAnswerView(width: 159,

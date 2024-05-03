@@ -33,7 +33,7 @@ struct QuizQuestionsView: View {
                     //MARK: - Question
                     ZStack{
                         Color(.backGroundButtton)
-                            .frame(width: 331, height: 114)
+                            .frame(width: 331, height: 104)
                             .cornerRadius(50)
                         Text(viewModel.quiz[viewModel.questionIndex].title)
                             .foregroundStyle(.white)
@@ -42,73 +42,75 @@ struct QuizQuestionsView: View {
                     }
                     //MARK: - Answers
                     
-                    VStack(spacing: 15) {
-                        ButtonAnswerView( question: viewModel.quiz[viewModel.questionIndex].answer[0],
-                                              color: viewModel.color1)
-                                .onTapGesture {
-                                    if !viewModel.choisOn{
-                                        if viewModel.quiz[viewModel.questionIndex].answer[0].isTrue{
-                                            viewModel.goodAnswer += 1
+                    ScrollView {
+                        VStack(spacing: 15) {
+                            ButtonAnswerView( question: viewModel.quiz[viewModel.questionIndex].answer[0],
+                                                  color: viewModel.color1)
+                                    .onTapGesture {
+                                        if !viewModel.choisOn{
+                                            if viewModel.quiz[viewModel.questionIndex].answer[0].isTrue{
+                                                viewModel.goodAnswer += 1
+                                            }
+                                            viewModel.checkColor()
+                                            viewModel.color1 = viewModel.color
+                                            viewModel.color2 = false
+                                            viewModel.color3 = false
+                                            viewModel.color4 = false
                                         }
-                                        viewModel.checkColor()
-                                        viewModel.color1 = viewModel.color
-                                        viewModel.color2 = false
-                                        viewModel.color3 = false
-                                        viewModel.color4 = false
                                     }
-                                }
-                        ButtonAnswerView( question: viewModel.quiz[viewModel.questionIndex].answer[1],
-                                              color: viewModel.color2)
-                                .onTapGesture {
-                                    if !viewModel.choisOn{
-                                        if viewModel.quiz[viewModel.questionIndex].answer[1].isTrue{
-                                            viewModel.goodAnswer += 1
+                            ButtonAnswerView( question: viewModel.quiz[viewModel.questionIndex].answer[1],
+                                                  color: viewModel.color2)
+                                    .onTapGesture {
+                                        if !viewModel.choisOn{
+                                            if viewModel.quiz[viewModel.questionIndex].answer[1].isTrue{
+                                                viewModel.goodAnswer += 1
+                                            }
+                                            viewModel.checkColor()
+                                            viewModel.color2 = viewModel.color
+                                            viewModel.color1 = false
+                                            viewModel.color3 = false
+                                            viewModel.color4 = false
                                         }
-                                        viewModel.checkColor()
-                                        viewModel.color2 = viewModel.color
-                                        viewModel.color1 = false
-                                        viewModel.color3 = false
-                                        viewModel.color4 = false
                                     }
-                                }
-                        ButtonAnswerView( question: viewModel.quiz[viewModel.questionIndex].answer[2],
-                                              color: viewModel.color3)
-                                .onTapGesture {
-                                    if !viewModel.choisOn{
-                                        if viewModel.quiz[viewModel.questionIndex].answer[2].isTrue{
-                                            viewModel.goodAnswer += 1
+                            ButtonAnswerView( question: viewModel.quiz[viewModel.questionIndex].answer[2],
+                                                  color: viewModel.color3)
+                                    .onTapGesture {
+                                        if !viewModel.choisOn{
+                                            if viewModel.quiz[viewModel.questionIndex].answer[2].isTrue{
+                                                viewModel.goodAnswer += 1
+                                            }
+                                            viewModel.checkColor()
+                                            viewModel.color3 = viewModel.color
+                                            viewModel.color2 = false
+                                            viewModel.color1 = false
+                                            viewModel.color4 = false
                                         }
-                                        viewModel.checkColor()
-                                        viewModel.color3 = viewModel.color
-                                        viewModel.color2 = false
-                                        viewModel.color1 = false
-                                        viewModel.color4 = false
                                     }
-                                }
-                        ButtonAnswerView( question: viewModel.quiz[viewModel.questionIndex].answer[3],
-                                              color: viewModel.color4)
-                                .onTapGesture {
-                                    if !viewModel.choisOn{
-                                        if viewModel.quiz[viewModel.questionIndex].answer[3].isTrue{
-                                            viewModel.goodAnswer += 1
+                            ButtonAnswerView( question: viewModel.quiz[viewModel.questionIndex].answer[3],
+                                                  color: viewModel.color4)
+                                    .onTapGesture {
+                                        if !viewModel.choisOn{
+                                            if viewModel.quiz[viewModel.questionIndex].answer[3].isTrue{
+                                                viewModel.goodAnswer += 1
+                                            }
+                                            viewModel.checkColor()
+                                            viewModel.color4 = viewModel.color
+                                            viewModel.color2 = false
+                                            viewModel.color3 = false
+                                            viewModel.color1 = false
                                         }
-                                        viewModel.checkColor()
-                                        viewModel.color4 = viewModel.color
-                                        viewModel.color2 = false
-                                        viewModel.color3 = false
-                                        viewModel.color1 = false
                                     }
-                                }
-                            
-                    }.padding()
+                                
+                        }.padding()
+                    }
                     
                     Spacer()
                     //MARK: - Botton bar
                     HStack(spacing: 20){
-                        Spacer()
-                        PassIconView(image: Image(.lighting), number: 0)
                         
-                        PassIconView(image: Image(.pacmen), number: 0)
+                        PassIconView(image: Image(.lighting), number: Int(viewModel.store[0].lighting))
+                        
+                        PassIconView(image: Image(.pacmen), number: Int(viewModel.store[0].pacmen))
                         Spacer()
                         StartButton(action: {
                             if viewModel.questionIndex + 1 >= viewModel.quiz.count{
@@ -116,7 +118,7 @@ struct QuizQuestionsView: View {
                                 gameOver = true
                             }
                         }, image: "arrow.right",cornerRadius: 40, width: 110, height: 54).font(.title)
-                    }.padding(.horizontal, 30)
+                    }.padding()
                     
                 }.padding()
             if isPresent {
