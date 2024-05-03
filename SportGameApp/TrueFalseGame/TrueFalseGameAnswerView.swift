@@ -36,13 +36,17 @@ struct TrueFalseGameAnswerView: View {
                 Spacer()
                 //MARK: - Botton bar
                 HStack(spacing: 20){
-                   // Spacer()
+                   
+                    Button(action: {
+                        viewModel.deleteOneTF()
+                    }, label: {
+                        PassIconView(image: Image(.pacmen), number: Int(viewModel.store[0].pacmen))
+                    })
                     
-                    PassIconView(image: Image(.pacmen), number: Int(viewModel.store[0].pacmen))
                     
                     Spacer()
                     StartButton(action: {
-                        print(viewModel.questionIndex + 1)
+                        
                         if viewModel.questionIndex + 1 >= viewModel.fotoQuiz.count{
                             viewModel.fotoQuizVictory()
                             gameOver = true
@@ -50,12 +54,7 @@ struct TrueFalseGameAnswerView: View {
                             viewModel.questionIndex += 1
                             viewModel.choisOn = false
                         }
-                        viewModel.choisOn = false
-                        viewModel.color = false
-                        viewModel.color1 = false
-                        viewModel.color2 = false
-                        viewModel.color3 = false
-                        viewModel.color4 = false
+                        viewModel.nextLevel()
                     }, image: "arrow.right",cornerRadius: 40, width: 110, height: 54).font(.title)
                 }
                 .padding(.vertical)

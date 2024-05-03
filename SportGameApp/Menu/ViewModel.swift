@@ -7,6 +7,7 @@
 
 import CoreData
 import Foundation
+import SwiftUI
 
 final class ViewModel: ObservableObject {
     @Published var store: [Store]!
@@ -28,7 +29,10 @@ final class ViewModel: ObservableObject {
     @Published var color4 = false
     
     @Published var trueFalseGame = TrueFalse.getTrueFalseGame()
-    
+    @Published var isDelete1 = false
+    @Published var isDelete2 = false
+    @Published var isDelete3 = false
+    @Published var isDelete4 = false
     
     @Published var priceBasket = 0
     @Published var error = ""
@@ -132,5 +136,43 @@ final class ViewModel: ObservableObject {
         simplePacmen = 0
         simpleLighting = 0
         priceBasket = 0
+    }
+    
+    //MARK: - IsDelete
+    func deleteOneTF(){
+        if !trueFalseGame[questionIndex].isTrue {
+            isDelete1 = true
+        }else {
+            isDelete2 = true
+        }
+        store[0].pacmen -= 1
+    }
+    
+    func deleteOneQuiz(){
+        var index = 1
+        for answer in quiz[questionIndex].answer {
+            if !answer.isTrue {
+                switch index {
+                    
+                case 1: isDelete1 = true
+                case 2: isDelete2 = true
+                case 3: isDelete3 = true
+                default:
+                    isDelete4 = true
+                }
+            }
+            index += 1
+        }
+    }
+    //MARK: - Next Level
+    func nextLevel(){
+        choisOn = false
+        color = false
+        color1 = false
+        color2 = false
+        color3 = false
+        color4 = false
+        isDelete1 = false
+        isDelete2 = false
     }
 }
