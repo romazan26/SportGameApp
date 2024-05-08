@@ -11,6 +11,7 @@ struct BonusGameView: View {
     @ObservedObject var viewModel: ViewModel
     @State private var degrees: Double = 0
     @State private var isPresent = false
+    @State var showTimer = false
     
     var body: some View {
         ZStack{
@@ -33,8 +34,10 @@ struct BonusGameView: View {
                         .padding(.leading, -20)
                         .rotationEffect(Angle(degrees: 68))
                         .rotationEffect(Angle(degrees: viewModel.degrees), anchor: .center)
-                    if viewModel.store[0].spin < 1 {
-                        TimerSpinView()
+                    
+                    //MARK: - Timer
+                    if showTimer{
+                        TimerSpinView(viewModel: viewModel)
                     }
                 }
                 
@@ -56,8 +59,7 @@ struct BonusGameView: View {
                         viewModel.findBonus()
                         Timer.scheduledTimer(withTimeInterval: 2.5, repeats: false) { Timer in
                             isPresent = true
-                            viewModel.store[0].spin -= 1
-                            viewModel.saveDate()
+                            
                         }
                     }, text: "SPIN",cornerRadius: 48.0)
                     .padding(.bottom, 40)
@@ -65,14 +67,24 @@ struct BonusGameView: View {
                 } else {
                     StartButton(action: {
                         viewModel.buySpin()
+                        if viewModel.store[0].spin <= 0 {
+                            showTimer = true
+                        }else {
+                            showTimer = false
+                        }
                     }, text: "100",cornerRadius: 48.0, money: true)
                     .padding(.bottom, 40)
                     .shadow(color: .blue, radius: 21)
                 }
             }.padding()
         }
+        .onAppear(perform: {
+            if viewModel.store[0].spin <= 0 {
+                showTimer = true
+            }
+        })
         .fullScreenCover(isPresented: $isPresent, content: {
-            YourPrizeView(viewModel: viewModel)
+            YourPrizeView(viewModel: viewModel, showTimer: $showTimer)
         })
         .animation(.easeInOut(duration: 2), value: viewModel.degrees)
         

@@ -10,6 +10,7 @@ import SwiftUI
 struct YourPrizeView: View {
     @ObservedObject var viewModel: ViewModel
     @Environment(\.dismiss) var dismiss
+    @Binding var showTimer: Bool
     
     var body: some View {
         ZStack {
@@ -43,6 +44,11 @@ struct YourPrizeView: View {
                     viewModel.degrees = 0
                     viewModel.collctBonus()
                     dismiss()
+                    if viewModel.store[0].spin <= 0 {
+                        showTimer = true
+                    } else {
+                        showTimer = false
+                    }
                 }, text: "COLLECT")
                 .padding(.bottom, 80)
             }
@@ -51,5 +57,5 @@ struct YourPrizeView: View {
 }
 
 #Preview {
-    YourPrizeView(viewModel: ViewModel())
+    YourPrizeView(viewModel: ViewModel(), showTimer: .constant(false))
 }

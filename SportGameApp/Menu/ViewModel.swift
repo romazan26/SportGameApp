@@ -41,6 +41,25 @@ final class ViewModel: ObservableObject {
     
     @Published var degrees: Double = 0
     @Published var bonus = Image(.energy1)
+    @Published var dateStartTimer = Date()
+    @Published var startTimer = false
+    
+    //MARK: - StartTimer
+
+    func checkTimer(minute: Int, second: Int){
+        if store[0].freeSpinDate == nil {
+            store[0].freeSpinDate = Date()
+            saveDate()
+            print("Date save")
+        }
+        if minute <= 0 && second <= 0{
+            store[0].spin += 1
+            store[0].freeSpinDate = Date()
+            dateStartTimer = store[0].freeSpinDate ?? Date()
+            saveDate()
+            print(dateStartTimer)
+        }
+    }
     
     //MARK: - CoreDate
     let container = NSPersistentContainer(name: "Shop")
@@ -226,6 +245,8 @@ final class ViewModel: ObservableObject {
         default:
             bonus = Image(.pacman4)
         }
+        store[0].spin -= 1
+        saveDate()
         
     }
     
