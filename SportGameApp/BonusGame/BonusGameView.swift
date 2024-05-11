@@ -27,13 +27,15 @@ struct BonusGameView: View {
                 ZStack {
                     Image(.whels)
                         .resizable()
-                        .frame(width: 380, height: 380)
+                        .frame(width: 360, height: 360)
+                        .rotationEffect(Angle(degrees: 68))
+                        .rotationEffect(Angle(degrees: viewModel.degrees), anchor: .center)
                     Image(.arow)
                         .resizable()
                         .frame(width: 70, height: 56)
                         .padding(.leading, -20)
-                        .rotationEffect(Angle(degrees: 68))
-                        .rotationEffect(Angle(degrees: viewModel.degrees), anchor: .center)
+                        
+                        
                     
                     //MARK: - Timer
                     if showTimer{

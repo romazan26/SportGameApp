@@ -44,7 +44,7 @@ struct FotoQuestionsView: View {
                         }
                     }, label: {
                         PassIconView(image: Image(.lighting), number: Int(viewModel.store[0].lighting))
-                    })
+                    }).disabled(viewModel.store[0].lighting > 0 ? false : true)
                     
                     //MARK: - Pacmen
                     Button(action: {
@@ -55,11 +55,12 @@ struct FotoQuestionsView: View {
                         }
                     }, label: {
                         PassIconView(image: Image(.pacmen), number: Int(viewModel.store[0].pacmen))
-                    })
+                    }).disabled(viewModel.store[0].pacmen > 0 ? false : true)
                     
                     
                     
                     Spacer()
+                    //MARK: - Next question
                     StartButton(action: {
                         
                         if viewModel.questionIndex + 1 >= viewModel.fotoQuiz.count{
@@ -71,6 +72,7 @@ struct FotoQuestionsView: View {
 
                         viewModel.nextLevel()
                     }, image: "arrow.right",cornerRadius: 40, width: 110, height: 54).font(.title)
+                        .disabled(viewModel.choisOn ? false : true)
                 }.padding(.horizontal)
                 
             }.padding()

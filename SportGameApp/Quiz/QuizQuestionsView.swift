@@ -45,9 +45,10 @@ struct QuizQuestionsView: View {
                 ScrollView {
                     VStack(spacing: 15) {
                         ButtonAnswerView( answer: viewModel.quiz[viewModel.questionIndex].answer[0],
-                                          color: viewModel.color1, delete: viewModel.isDelete1)
+                                          color: viewModel.color1, 
+                                          delete: viewModel.isDelete1)
                         .onTapGesture {
-                            if !viewModel.choisOn{
+                            if !viewModel.choisOn && !viewModel.isDelete1{
                                 if viewModel.quiz[viewModel.questionIndex].answer[0].isTrue{
                                     viewModel.goodAnswer += 1
                                 }
@@ -61,7 +62,7 @@ struct QuizQuestionsView: View {
                         ButtonAnswerView( answer: viewModel.quiz[viewModel.questionIndex].answer[1],
                                           color: viewModel.color2, delete: viewModel.isDelete2)
                         .onTapGesture {
-                            if !viewModel.choisOn{
+                            if !viewModel.choisOn && !viewModel.isDelete2{
                                 if viewModel.quiz[viewModel.questionIndex].answer[1].isTrue{
                                     viewModel.goodAnswer += 1
                                 }
@@ -75,7 +76,7 @@ struct QuizQuestionsView: View {
                         ButtonAnswerView( answer: viewModel.quiz[viewModel.questionIndex].answer[2],
                                           color: viewModel.color3, delete: viewModel.isDelete3)
                         .onTapGesture {
-                            if !viewModel.choisOn{
+                            if !viewModel.choisOn && !viewModel.isDelete3{
                                 if viewModel.quiz[viewModel.questionIndex].answer[2].isTrue{
                                     viewModel.goodAnswer += 1
                                 }
@@ -89,7 +90,7 @@ struct QuizQuestionsView: View {
                         ButtonAnswerView( answer: viewModel.quiz[viewModel.questionIndex].answer[3],
                                           color: viewModel.color4, delete: viewModel.isDelete4)
                         .onTapGesture {
-                            if !viewModel.choisOn{
+                            if !viewModel.choisOn && !viewModel.isDelete4{
                                 if viewModel.quiz[viewModel.questionIndex].answer[3].isTrue{
                                     viewModel.goodAnswer += 1
                                 }
@@ -117,7 +118,7 @@ struct QuizQuestionsView: View {
                         }
                     }, label: {
                         PassIconView(image: Image(.lighting), number: Int(viewModel.store[0].lighting))
-                    })
+                    }).disabled(viewModel.store[0].lighting > 0 ? false : true)
                     //MARK: - Pacmen
                     Button(action: {
                         if viewModel.store[0].pacmen > 0{
@@ -127,7 +128,7 @@ struct QuizQuestionsView: View {
                         }
                     }, label: {
                         PassIconView(image: Image(.pacmen), number: Int(viewModel.store[0].pacmen))
-                    })
+                    }).disabled(viewModel.store[0].pacmen > 0 ? false : true)
                     
                     Spacer()
                     //MARK: - NextLevel
@@ -137,6 +138,7 @@ struct QuizQuestionsView: View {
                             gameOver = true
                         }
                     }, image: "arrow.right",cornerRadius: 40, width: 110, height: 54).font(.title)
+                        .disabled(viewModel.choisOn ? false : true)
                 }.padding()
                 
             }.padding()

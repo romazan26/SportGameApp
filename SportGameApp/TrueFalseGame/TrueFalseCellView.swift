@@ -32,7 +32,7 @@ struct TrueFalseCellView: View {
                                         title: "True", color: viewModel.color1,
                                         delete: viewModel.isDelete1)
                     .onTapGesture {
-                        if !viewModel.choisOn{
+                        if !viewModel.choisOn && !viewModel.isDelete1{
                             if viewModel.trueFalseGame[viewModel.questionIndex].isTrue{
                                 viewModel.goodAnswer += 1
                             }
@@ -48,7 +48,7 @@ struct TrueFalseCellView: View {
                                     color: viewModel.color2,
                                     delete: viewModel.isDelete2)
                     .onTapGesture {
-                        if !viewModel.choisOn{
+                        if !viewModel.choisOn && !viewModel.isDelete2{
                             if viewModel.trueFalseGame[viewModel.questionIndex].isTrue{
                                 viewModel.goodAnswer += 1
                             }

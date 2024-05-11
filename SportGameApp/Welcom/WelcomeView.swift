@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct WelcomeView: View {
+    
+    @AppStorage("isFirstStart") var isFirstStart: Bool?
+    
     @State private var isPresented = false
     @State var isLoading = true
+    
     var body: some View {
         VStack {
-                if isLoading {
-                    LoadingView()
-                } else {
                     VStack{
                         VStack{
                             Text("WELCOME")
@@ -28,6 +29,7 @@ struct WelcomeView: View {
                         Spacer()
                         StartButton(action: {
                             isPresented = true
+                            isFirstStart = false
                         }, text: "PLAY NOW", image: "")
                         .padding(.bottom)
                         
@@ -43,21 +45,12 @@ struct WelcomeView: View {
                         }
                     }
                 }
-            
-        }
         .fullScreenCover(isPresented: $isPresented, content: {
-            MenuView()
+            LoadingView()
         })
-        .onAppear(perform: {
-            startLoading()
-    })
        
     }
-    private func startLoading(){
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.1){
-            isLoading = false
-        }
-    }
+   
 }
 
 #Preview {

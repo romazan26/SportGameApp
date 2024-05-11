@@ -23,7 +23,7 @@ struct FotoQuizCellView: View {
                                      answer: viewModel.fotoQuiz[viewModel.questionIndex].answer[0],
                                      color: viewModel.color1,delete: viewModel.isDelete1)
                     .onTapGesture {
-                        if !viewModel.choisOn{
+                        if !viewModel.choisOn && !viewModel.isDelete1{
                             if viewModel.fotoQuiz[viewModel.questionIndex].answer[0].isTrue{
                                 viewModel.goodAnswer += 1
                             }
@@ -39,7 +39,7 @@ struct FotoQuizCellView: View {
                                      answer: viewModel.fotoQuiz[viewModel.questionIndex].answer[2],
                                      color: viewModel.color2,delete: viewModel.isDelete3)
                     .onTapGesture {
-                        if !viewModel.choisOn{
+                        if !viewModel.choisOn && !viewModel.isDelete3{
                             if viewModel.fotoQuiz[viewModel.questionIndex].answer[2].isTrue{
                                 viewModel.goodAnswer += 1
                             }
@@ -57,7 +57,7 @@ struct FotoQuizCellView: View {
                                      answer: viewModel.fotoQuiz[viewModel.questionIndex].answer[1],
                                      color: viewModel.color3,delete: viewModel.isDelete2)
                     .onTapGesture {
-                        if !viewModel.choisOn{
+                        if !viewModel.choisOn && !viewModel.isDelete2{
                             if viewModel.fotoQuiz[viewModel.questionIndex].answer[1].isTrue{
                                 viewModel.goodAnswer += 1
                             }
@@ -74,7 +74,7 @@ struct FotoQuizCellView: View {
                                      answer: viewModel.fotoQuiz[viewModel.questionIndex].answer[3],
                                      color: viewModel.color4,delete: viewModel.isDelete4)
                     .onTapGesture {
-                        if !viewModel.choisOn{
+                        if !viewModel.choisOn && !viewModel.isDelete4{
                             if viewModel.fotoQuiz[viewModel.questionIndex].answer[3].isTrue{
                                 viewModel.goodAnswer += 1
                             }

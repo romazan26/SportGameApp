@@ -10,7 +10,7 @@ import SwiftUI
 struct MenuView: View {
     
     @ObservedObject var viewModel = ViewModel()
-    @AppStorage("isFirstStart") var isFirstStart: Bool?
+    @AppStorage("noUser") var noUser: Bool?
     
     var body: some View {
         NavigationView {
@@ -76,9 +76,9 @@ struct MenuView: View {
                 
             }.ignoresSafeArea()
         }.onAppear(perform: {
-            if !(isFirstStart ?? false) {
+            if !(noUser ?? false) {
                 viewModel.addStore()
-                isFirstStart = true
+                noUser = true
             }
         })
         

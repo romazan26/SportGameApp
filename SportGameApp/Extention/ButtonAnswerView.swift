@@ -14,7 +14,6 @@ struct ButtonAnswerView: View {
     var answer: Answer
     var color = false
     var delete = false
-  
     
     
     var body: some View {

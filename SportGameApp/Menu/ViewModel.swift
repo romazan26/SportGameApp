@@ -98,7 +98,7 @@ final class ViewModel: ObservableObject {
         newStore.lighting = 0
         newStore.money = 0
         newStore.pacmen = 0
-        newStore.spin = 0
+        newStore.spin = 1
         
         saveDate()
     }
@@ -233,8 +233,9 @@ final class ViewModel: ObservableObject {
     
     //MARK: - BonusGame
     func findBonus(){
-        degrees = Double.random(in: 1...360)
-        switch degrees {
+        degrees = Double.random(in: 360...720)
+        let position = degrees - 360
+        switch position {
         case 0...45 :  bonus = Image(.energy1)
         case 45...90 :   bonus = Image(.pacman2)
         case 90...135 :  bonus = Image(.pacman1)

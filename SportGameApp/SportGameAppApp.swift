@@ -9,10 +9,17 @@ import SwiftUI
 
 @main
 struct SportGameAppApp: App {
-    @AppStorage("isFirstStart") var isFirstStart: Bool = false
+    
+    @AppStorage("isFirstStart") var isFirstStart: Bool = true
+    @AppStorage("noUser") var noUser: Bool = false
+    
     var body: some Scene {
         WindowGroup {
-            WelcomeView()
+            if isFirstStart {
+                WelcomeView()
+            }else {
+                LoadingView()
+            }
         }
     }
 }

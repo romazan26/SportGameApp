@@ -8,7 +8,13 @@
 import SwiftUI
 
 struct LoadingView: View {
+
+    
     @State var progress: Float = 0
+    @State var isPresent = false
+    
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .center)) {
             Color(.backGround)
@@ -20,14 +26,17 @@ struct LoadingView: View {
                 .padding(.top, -150)
             ProgressBarView(progress: progress * 0.01)
                 .frame(width: 165, height: 165)
-               // .padding(.top, 381)
-        }.onAppear(perform: {
+        }
+        .fullScreenCover(isPresented: $isPresent, content: {
+                MenuView()
+        })
+        .onAppear(perform: {
             Timer.scheduledTimer(withTimeInterval: 0.02, repeats: true) { timer in
                 if progress < 100{
                     progress += 1
                 }else {
                     timer.invalidate()
-                    
+                    isPresent = true
                 }
             }
         })

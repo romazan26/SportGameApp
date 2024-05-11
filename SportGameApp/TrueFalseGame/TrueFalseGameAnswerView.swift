@@ -43,10 +43,12 @@ struct TrueFalseGameAnswerView: View {
                         }
                     }, label: {
                         PassIconView(image: Image(.pacmen), number: Int(viewModel.store[0].pacmen))
-                    })
+                    }).disabled(viewModel.store[0].pacmen > 0 ? false : true)
                     
                     
                     Spacer()
+                    
+                    //MARK: - Next question
                     StartButton(action: {
                         
                         if viewModel.questionIndex + 1 >= viewModel.fotoQuiz.count{
@@ -58,6 +60,7 @@ struct TrueFalseGameAnswerView: View {
                         }
                         viewModel.nextLevel()
                     }, image: "arrow.right",cornerRadius: 40, width: 110, height: 54).font(.title)
+                        .disabled(viewModel.choisOn ? false : true)
                 }
                 .padding(.vertical)
                 .padding(.horizontal, 35)
