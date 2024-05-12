@@ -21,6 +21,7 @@ struct QuizView: View {
         .onAppear(perform: {
             viewModel.questionIndex = 0
         })
+        .navigationBarBackButtonTitleHidden()
         .toolbar(content: {
             ToolbarItem {
                 NavigationLink {

@@ -53,6 +53,7 @@ struct YourPrizeView: View {
                 .padding(.bottom, 80)
             }
         }
+        
     }
 }
 

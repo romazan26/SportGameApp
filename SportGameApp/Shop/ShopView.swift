@@ -143,9 +143,12 @@ struct ShopView: View {
                 })
                 
             }.padding()
-        }.toolbar(content: {
-            ToolbarItem(placement: .topBarLeading) {
+        }
+        .navigationBarBackButtonTitleHidden()
+        .toolbar(content: {
+            ToolbarItem(placement: .automatic) {
                 ToolBarMoneyView(money: Int(viewModel.store[0].money))
+                    .padding(.trailing, 60)
             }
             ToolbarItem(placement: .topBarTrailing) {
                 NavigationLink {

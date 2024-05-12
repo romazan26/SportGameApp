@@ -39,6 +39,7 @@ struct TrueFalseGameView: View {
         })
         .foregroundStyle(.white)
         .padding()
+        .navigationBarBackButtonTitleHidden()
         .toolbar(content: {
             NavigationLink {
                 SettingsView()
@@ -48,6 +49,7 @@ struct TrueFalseGameView: View {
             
             }
         })
+        
         .background(
                 Color.backgrounFoto
         ).ignoresSafeArea()

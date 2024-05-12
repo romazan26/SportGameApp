@@ -153,9 +153,11 @@ struct QuizQuestionsView: View {
             }
         }
         .animation(.easeInOut, value: isPresent)
+        .navigationBarBackButtonTitleHidden()
         .toolbar(content: {
-            ToolbarItem(placement: .topBarLeading) {
+            ToolbarItem(placement: .automatic) {
                 ToolBarMoneyView(money: Int(viewModel.store[0].money))
+                    .padding(.trailing, 60)
             }
             ToolbarItem(placement: .topBarTrailing) {
                 Button(action: {
@@ -174,5 +176,7 @@ struct QuizQuestionsView: View {
 }
 
 #Preview {
-    QuizQuestionsView(viewModel: ViewModel())
+    NavigationView {
+        QuizQuestionsView(viewModel: ViewModel())
+    }
 }

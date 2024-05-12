@@ -11,17 +11,6 @@ struct ToolBarMoneyView: View {
     var money = 0
     var body: some View {
         HStack{
-            //MARK: - Buttom plus
-            NavigationLink {
-                //destenation
-            } label: {
-                ZStack{
-                    RoundedRectangle(cornerRadius: 12.0)
-                        .foregroundStyle(.backGroundButtton)
-                    Image(systemName: "plus")
-                        .foregroundStyle(.white)
-                }.frame(width: 38, height: 38)
-            }
             //MARK: - Money
             ZStack{
                 RoundedRectangle(cornerRadius: 13.0)

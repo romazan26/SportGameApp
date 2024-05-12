@@ -44,7 +44,7 @@ struct WinnerView: View {
                 
             }
             .foregroundStyle(.white)
-        }
+        }.padding()
     }
 }
 

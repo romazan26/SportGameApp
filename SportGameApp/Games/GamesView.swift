@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GamesView: View {
     @ObservedObject var viewModel: ViewModel
+    @Environment(\.dismiss) private var dismiss
     var body: some View {
             VStack{
                 Text("GAMES")
@@ -56,6 +57,7 @@ struct GamesView: View {
             .foregroundStyle(.white)
         
         .ignoresSafeArea()
+        .navigationBarBackButtonTitleHidden()
         .toolbar(content: {
             ToolbarItem {
                 NavigationLink {
@@ -65,11 +67,27 @@ struct GamesView: View {
                         .foregroundStyle(.white)
                 }
             }
+//            ToolbarItem(placement: .navigationBarLeading) {
+//                Button {
+//                    print("Custom Action")
+//                    // 2
+//                    dismiss()
+//                    
+//                } label: {
+//                    HStack {
+//                        Image(systemName: "chevron.backward")
+//                            .foregroundStyle(.white)
+//                    }
+//                }
+//            }
         })
         
     }
 }
 
 #Preview {
-    GamesView(viewModel: ViewModel())
+    NavigationView(content: {
+        GamesView(viewModel: ViewModel())
+    })
+    
 }

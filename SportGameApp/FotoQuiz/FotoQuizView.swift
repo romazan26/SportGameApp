@@ -38,6 +38,7 @@ struct FotoQuizView: View {
         })
         .foregroundStyle(.white)
         .padding()
+        .navigationBarBackButtonTitleHidden()
         .toolbar(content: {
             ToolbarItem {
                 NavigationLink {

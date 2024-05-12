@@ -35,6 +35,7 @@ struct SettingsView: View {
             }
             .padding()
             .foregroundStyle(.white)
+            .navigationBarBackButtonTitleHidden()
             .toolbar(content: {
                 ToolbarItem {
                     Image(systemName: "gearshape")
@@ -46,5 +47,7 @@ struct SettingsView: View {
 }
 
 #Preview {
-    SettingsView()
+    NavigationView {
+        SettingsView()
+    }
 }

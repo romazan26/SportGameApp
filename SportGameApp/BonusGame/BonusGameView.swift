@@ -80,6 +80,7 @@ struct BonusGameView: View {
                 }
             }.padding()
         }
+        
         .onAppear(perform: {
             if viewModel.store[0].spin <= 0 {
                 showTimer = true
@@ -91,9 +92,10 @@ struct BonusGameView: View {
         .animation(.easeInOut(duration: 2), value: viewModel.degrees)
         
         //MARK: - ToolBar
+        .navigationBarBackButtonTitleHidden()
         .toolbar(content: {
-            ToolbarItem(placement: .topBarLeading){
-                ToolBarMoneyView(money: Int(viewModel.store[0].money)).padding(.leading, 40)
+            ToolbarItem(placement: .automatic){
+                ToolBarMoneyView(money: Int(viewModel.store[0].money)).padding(.trailing, 60)
             }
             ToolbarItem {
                 NavigationLink {
@@ -109,5 +111,7 @@ struct BonusGameView: View {
 }
 
 #Preview {
-    BonusGameView(viewModel: ViewModel())
+    NavigationView {
+        BonusGameView(viewModel: ViewModel())
+    }
 }
