@@ -136,7 +136,11 @@ struct QuizQuestionsView: View {
                         if viewModel.questionIndex + 1 >= viewModel.quiz.count{
                             viewModel.quizVictory()
                             gameOver = true
+                        }else {
+                            viewModel.questionIndex += 1
                         }
+
+                        viewModel.nextLevel()
                     }, image: "arrow.right",cornerRadius: 40, width: 110, height: 54).font(.title)
                         .disabled(viewModel.choisOn ? false : true)
                 }.padding()
